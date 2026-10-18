@@ -87,6 +87,24 @@ class TestRoutes(unittest.TestCase):
         response = self.client.post("/toggle/NON-EXISTENT-TOPIC-ID")
         self.assertEqual(response.status_code, 404)
 
+    def test_vercel_rewrite_subject(self):
+        """Simulate Vercel routing /subject/MCA302 via /api/index?__path=subject/MCA302."""
+        response = self.client.get("/api/index?__path=subject/MCA302")
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn("Theory of Computation and Compilers", html)
+        self.assertIn("Module 1", html)
+
+    def test_vercel_rewrite_toggle(self):
+        """Simulate Vercel routing /toggle/<id> via /api/index?__path=toggle/<id>."""
+        topic_id = "MCA302-1-1.1"
+        response = self.client.post(f"/api/index?__path=toggle/{topic_id}")
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertTrue(data["success"])
+        self.assertEqual(data["topic_id"], topic_id)
+
 
 if __name__ == "__main__":
     unittest.main()
+
