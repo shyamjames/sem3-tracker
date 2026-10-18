@@ -1,8 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
   const checkboxes = document.querySelectorAll('.topic-checkbox');
+  const topicRows = document.querySelectorAll('.topic-row');
+
+  // Allow tapping anywhere on a topic row to toggle
+  topicRows.forEach((row) => {
+    row.addEventListener('click', (e) => {
+      // If the tap was directly on the row background/padding (not on the checkbox or label)
+      if (e.target !== row.querySelector('.topic-checkbox') && !e.target.closest('label')) {
+        const checkbox = row.querySelector('.topic-checkbox');
+        if (checkbox && !checkbox.disabled) {
+          checkbox.checked = !checkbox.checked;
+          checkbox.dispatchEvent(new Event('change'));
+        }
+      }
+    });
+  });
 
   checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', async (event) => {
+    checkbox.addEventListener('change', async () => {
       const topicId = checkbox.dataset.topicId;
       const topicRow = checkbox.closest('.topic-row');
       const originalChecked = !checkbox.checked;
