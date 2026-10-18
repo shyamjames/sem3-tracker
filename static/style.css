@@ -170,6 +170,23 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-tap-highlight-color: transparent;
 }
 
+.brand-logo-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(232, 197, 71, 0.4);
+  box-shadow: 0 0 10px rgba(232, 197, 71, 0.2);
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.brand-link:hover .brand-logo-img {
+  transform: scale(1.08) rotate(4deg);
+  box-shadow: 0 0 14px rgba(232, 197, 71, 0.5);
+  border-color: var(--color-streetlamp-yellow);
+}
+
 .brand-badge {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -1000,9 +1017,10 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
   }
 
-  .brand-link svg {
-    width: 20px;
-    height: 20px;
+  .brand-link svg,
+  .brand-logo-img {
+    width: 22px;
+    height: 22px;
     flex-shrink: 0;
   }
 

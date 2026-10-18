@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{% block title %}MCA Semester III — Exam Revision Tracker{% endblock %}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='logo.svg') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet">
@@ -19,10 +21,7 @@
   <header class="app-header">
     <div class="nav-inner">
       <a href="{{ url_for('dashboard') }}" class="brand-link">
-        <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-        </svg>
+        <img src="{{ url_for('static', filename='logo.svg') }}" alt="MCA Revision Dossier Logo" class="brand-logo-img" width="28" height="28">
         <span>MCA REVISION DOSSIER</span>
       </a>
       <div class="nav-right-controls">

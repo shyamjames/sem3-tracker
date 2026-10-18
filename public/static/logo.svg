@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Dark Vignette Background -->
+    <radialGradient id="emblem-bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#181818"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+
+    <!-- Streetlamp Yellow Gradient -->
+    <linearGradient id="beam-yellow" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2D05C"/>
+      <stop offset="60%" stop-color="#E8C547"/>
+      <stop offset="100%" stop-color="#D49B28"/>
+    </linearGradient>
+
+    <!-- Magnifying Lens Glass Reflection -->
+    <linearGradient id="lens-glare" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="40%" stop-color="#E8C547" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Circular Badge Clip -->
+    <clipPath id="badge-clip">
+      <circle cx="100" cy="100" r="92"/>
+    </clipPath>
+
+    <!-- Bottom Text Path -->
+    <path id="bottom-text-arc" d="M 30 118 A 78 78 0 0 0 170 118" fill="none"/>
+  </defs>
+
+  <!-- Outer Ring & Circular Body -->
+  <circle cx="100" cy="100" r="96" fill="#000000"/>
+  <circle cx="100" cy="100" r="94" fill="url(#emblem-bg)" stroke="#E5E5E5" stroke-width="3.5"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#2a2a2a" stroke-width="1.5"/>
+
+  <!-- Chiaroscuro Lighting Inside Badge -->
+  <g clip-path="url(#badge-clip)">
+    <!-- Diagonal Spotlight Beam -->
+    <polygon points="120,10 185,55 90,175 40,140" fill="url(#beam-yellow)"/>
+
+    <!-- Horizontal Venetian Blind Shadow Slats -->
+    <g opacity="0.95">
+      <line x1="20" y1="36" x2="180" y2="36" stroke="#0a0a0a" stroke-width="7"/>
+      <line x1="20" y1="50" x2="180" y2="50" stroke="#0a0a0a" stroke-width="7"/>
+      <line x1="20" y1="64" x2="180" y2="64" stroke="#0a0a0a" stroke-width="7"/>
+      <line x1="20" y1="78" x2="180" y2="78" stroke="#0a0a0a" stroke-width="7"/>
+      <line x1="20" y1="92" x2="180" y2="92" stroke="#0a0a0a" stroke-width="7"/>
+      <line x1="20" y1="106" x2="180" y2="106" stroke="#0a0a0a" stroke-width="7"/>
+      <line x1="20" y1="120" x2="180" y2="120" stroke="#0a0a0a" stroke-width="7"/>
+    </g>
+
+    <!-- Soft Ambient Noir Shadow Mask -->
+    <path d="M 0 0 L 200 0 L 200 200 L 0 200 Z" fill="rgba(0,0,0,0.18)"/>
+  </g>
+
+  <!-- Dossier Case File Folder -->
+  <g id="folder-group" transform="translate(4, -4)">
+    <!-- Folder Back Shadow -->
+    <path d="M 60 62 L 90 62 L 96 70 L 140 70 L 140 128 L 56 128 Z" fill="#000000" opacity="0.6"/>
+
+    <!-- Folder Tab & Back Body -->
+    <path d="M 58 60 L 86 60 L 92 68 L 138 68 A 3 3 0 0 1 141 71 L 141 125 A 3 3 0 0 1 138 128 L 58 128 A 3 3 0 0 1 55 125 L 55 63 A 3 3 0 0 1 58 60 Z"
+          fill="#D4A732"
+          stroke="#000000"
+          stroke-width="2.5"/>
+
+    <!-- White Confidential Sheet Inside -->
+    <path d="M 64 68 L 130 68 L 130 120 L 64 120 Z" fill="#F4F4F4" stroke="#000000" stroke-width="1.8"/>
+
+    <!-- Blood Wine Confidential Seal Ribbon -->
+    <g id="confidential-seal">
+      <path d="M 72 68 L 84 68 L 84 96 L 78 90 L 72 96 Z" fill="#7A0E0E" stroke="#000000" stroke-width="1.5"/>
+      <circle cx="78" cy="98" r="7.5" fill="#5C0A0A" stroke="#FF2D2D" stroke-width="1.2"/>
+      <circle cx="78" cy="98" r="4.5" fill="#8B0000"/>
+    </g>
+
+    <!-- Folder Front Cover (Slightly angled open) -->
+    <path d="M 58 74 L 138 74 L 134 128 L 55 128 Z" fill="#E8C547" stroke="#000000" stroke-width="2.5"/>
+  </g>
+
+  <!-- Detective Magnifying Glass (Chiaroscuro Focus) -->
+  <g id="magnifier" transform="translate(2, -2)">
+    <!-- Outer Rim Drop Shadow -->
+    <circle cx="106" cy="102" r="28" fill="#000000" opacity="0.5"/>
+
+    <!-- Handle Shadow -->
+    <line x1="124" y1="120" x2="149" y2="145" stroke="#000000" stroke-width="14" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Handle Base & Grip -->
+    <line x1="124" y1="120" x2="148" y2="144" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
+    <line x1="126" y1="122" x2="145" y2="141" stroke="#E8C547" stroke-width="6" stroke-linecap="round"/>
+    <!-- Pommel -->
+    <circle cx="148" cy="144" r="5" fill="#E8C547" stroke="#000000" stroke-width="1.5"/>
+
+    <!-- Heavy Noir Rim -->
+    <circle cx="104" cy="100" r="26" fill="#141414" stroke="#000000" stroke-width="3"/>
+    <circle cx="104" cy="100" r="23" fill="url(#lens-glare)" stroke="#E8C547" stroke-width="3"/>
+
+    <!-- Investigation Verification Checkmark in Focus -->
+    <path d="M 94 100 L 101 107 L 115 93" fill="none" stroke="#FDF0A6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Curved Glass Reflection Highlight -->
+    <path d="M 87 93 A 19 19 0 0 1 118 84" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+  </g>
+
+  <!-- Bottom Brand Typography Arc -->
+  <text>
+    <textPath href="#bottom-text-arc" startOffset="50%" text-anchor="middle" font-family="'JetBrains Mono', 'Special Elite', monospace" font-size="10.5" font-weight="700" fill="#F0F0F0" letter-spacing="2.8">
+      MCA REVISION DOSSIER
+    </textPath>
+  </text>
+</svg>
