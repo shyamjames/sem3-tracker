@@ -7,9 +7,36 @@ import progress
 import storage
 
 
+class VercelPathMiddleware:
+    """WSGI middleware ensuring proper path resolution when hosted on Vercel."""
+
+    def __init__(self, wsgi_app):
+        self.wsgi_app = wsgi_app
+
+    def __call__(self, environ, start_response):
+        orig_path = (
+            environ.get("HTTP_X_MATCHED_PATH")
+            or environ.get("HTTP_X_FORWARDED_URI")
+            or environ.get("HTTP_X_VERCEL_MATCHED_PATH")
+        )
+        path = environ.get("PATH_INFO", "")
+
+        if path.startswith("/api/index"):
+            if orig_path and not orig_path.startswith("/api/index"):
+                environ["PATH_INFO"] = orig_path
+            else:
+                sub = path[len("/api/index"):]
+                environ["PATH_INFO"] = sub or "/"
+        elif path == "/api" or path == "/api/":
+            environ["PATH_INFO"] = "/"
+
+        return self.wsgi_app(environ, start_response)
+
+
 def create_app(db_path: Optional[str] = None, test_config: Optional[Dict[str, Any]] = None) -> Flask:
     """Application factory for the MCA Exam Revision Dashboard."""
     app = Flask(__name__)
+    app.wsgi_app = VercelPathMiddleware(app.wsgi_app)
 
     # Default configuration
     resolved_db_path = db_path if db_path is not None else storage.get_default_db_path()
@@ -22,6 +49,8 @@ def create_app(db_path: Optional[str] = None, test_config: Optional[Dict[str, An
     storage.init_db(app.config["DATABASE"])
 
     @app.route("/")
+    @app.route("/api/index")
+    @app.route("/api")
     def dashboard():
         """Render main revision dashboard with overall progress and subjects in exam-date order."""
         db = app.config["DATABASE"]
