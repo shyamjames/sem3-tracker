@@ -61,9 +61,9 @@ def create_app(db_path: Optional[str] = None, test_config: Optional[Dict[str, An
     # Initialize SQLite database and seed initial topics if empty
     storage.init_db(app.config["DATABASE"])
 
-    @app.route("/")
-    @app.route("/api/index")
     @app.route("/api")
+    @app.route("/api/index")
+    @app.route("/")
     def dashboard():
         """Render main revision dashboard with overall progress and subjects in exam-date order."""
         db = app.config["DATABASE"]
