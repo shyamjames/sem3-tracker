@@ -191,6 +191,99 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1.5rem;
 }
 
+/* User Auth Header Component */
+.nav-auth-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-auth-google {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1a1a1a;
+  border: 1px solid var(--color-smoke-grey);
+  border-radius: var(--radius-base);
+  padding: 0.35rem 0.75rem;
+  color: var(--color-fog-white);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 180ms var(--ease-spring);
+  -webkit-tap-highlight-color: transparent;
+  min-height: 34px;
+}
+
+.btn-auth-google:active {
+  transform: scale(0.97);
+  background-color: #242424;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-auth-google:hover {
+    border-color: var(--color-streetlamp-yellow);
+    color: var(--color-streetlamp-yellow);
+    background-color: #222;
+  }
+}
+
+.google-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.user-profile-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.2rem 0.5rem 0.2rem 0.25rem;
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-muted-border);
+}
+
+.user-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-streetlamp-yellow);
+  object-fit: cover;
+  background-color: #242424;
+}
+
+.user-display-name {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  color: var(--color-fog-white);
+  max-width: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-logout-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: 1px solid var(--color-muted-border);
+  border-radius: 4px;
+  padding: 0.2rem 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--color-fog-white-dim);
+  cursor: pointer;
+  transition: all 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-logout-ghost:hover {
+  color: var(--color-neon-red);
+  border-color: var(--color-neon-red);
+}
+
 /* Overall Progress Banner */
 .overall-banner {
   background-color: var(--color-card-bg);
@@ -849,6 +942,14 @@ h1, h2, h3, h4, h5, h6 {
 /* Small Smartphone Breakpoint (<= 480px) */
 @media (max-width: 480px) {
   .nav-date-text {
+    display: none;
+  }
+
+  .user-display-name {
+    display: none;
+  }
+
+  .btn-logout-ghost .logout-text {
     display: none;
   }
 

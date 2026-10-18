@@ -28,12 +28,12 @@
         </p>
       </div>
       <div class="overall-numbers">
-        <div class="big-percentage">{{ overall.percent }}%</div>
-        <div class="fraction-count">{{ overall.done }} / {{ overall.total }} topics complete</div>
+        <div class="big-percentage" id="overall-pct">{{ overall.percent }}%</div>
+        <div class="fraction-count" id="overall-count">{{ overall.done }} / {{ overall.total }} topics complete</div>
       </div>
     </div>
     <div class="progress-bar-container" role="progressbar" aria-valuenow="{{ overall.percent }}" aria-valuemin="0" aria-valuemax="100">
-      <div class="progress-bar-fill" style="width: {{ overall.percent }}%;"></div>
+      <div class="progress-bar-fill" id="overall-bar-fill" style="width: {{ overall.percent }}%;"></div>
     </div>
   </div>
 </section>
@@ -55,7 +55,7 @@
 
   <div class="cards-asymmetric-grid">
     {% for subject in overall.subjects %}
-    <a href="{{ url_for('subject_page', code=subject.code) }}" class="subject-card" id="card-{{ subject.code }}">
+    <a href="{{ url_for('subject_page', code=subject.code) }}" class="subject-card" id="card-{{ subject.code }}" data-subject-code="{{ subject.code }}" data-subject-total="{{ subject.total }}">
       <div>
         <div class="card-top-meta">
           <span class="code-pill">{{ subject.code }}</span>
@@ -84,11 +84,11 @@
 
       <div class="card-progress-footer">
         <div class="progress-header-row">
-          <span>{{ subject.done }} / {{ subject.total }} topics</span>
-          <span class="progress-pct-text">{{ subject.percent }}%</span>
+          <span id="card-count-{{ subject.code }}">{{ subject.done }} / {{ subject.total }} topics</span>
+          <span class="progress-pct-text" id="card-pct-{{ subject.code }}">{{ subject.percent }}%</span>
         </div>
         <div class="progress-bar-container" role="progressbar" aria-valuenow="{{ subject.percent }}" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar-fill" style="width: {{ subject.percent }}%;"></div>
+          <div class="progress-bar-fill" id="card-bar-{{ subject.code }}" style="width: {{ subject.percent }}%;"></div>
         </div>
       </div>
     </a>

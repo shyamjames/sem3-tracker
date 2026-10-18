@@ -15,7 +15,7 @@
 </nav>
 
 <!-- Subject Header Card -->
-<section class="subject-header-card">
+<section class="subject-header-card" data-subject-code="{{ subject.code }}" data-subject-total="{{ subject.total }}">
   <div class="subject-header-grid">
     <div>
       <div class="subject-code-tag">{{ subject.code }} &bull; Semester III</div>
@@ -56,7 +56,7 @@
   {% for m_no in range(1, 6) %}
     {% set mod = subject.modules[m_no] %}
     {% if mod and mod.topics %}
-    <article class="module-card" id="module-section-{{ m_no }}">
+    <article class="module-card" id="module-section-{{ m_no }}" data-module-no="{{ m_no }}" data-module-total="{{ mod.total }}">
       <header class="module-header">
         <div class="module-title-wrap">
           <h2 class="module-title">Module {{ m_no }}</h2>
