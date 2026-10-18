@@ -1,0 +1,775 @@
+{
+  "source": "syllabus.pdf (uploaded by user)",
+  "subjects": [
+    {
+      "code": "MCA302",
+      "name": "Theory of Computation and Compilers",
+      "syllabus_type": "Core",
+      "exam_date": "2026-10-23",
+      "exam_time": "9:30 AM - 12:30 PM",
+      "modules": [
+        {
+          "module_no": 1,
+          "topics": [
+            {
+              "ref": "1.1",
+              "text": "Formal Language, Non-Computational Problems, Diagonal Argument, Russell's Paradox"
+            },
+            {
+              "ref": "1.2",
+              "text": "Deterministic Finite Automaton (DFA), Non-Deterministic Finite Automaton (NDFA), Equivalence of DFA and NDFA"
+            },
+            {
+              "ref": "1.3",
+              "text": "Regular Languages, Regular Grammars, Regular Expressions"
+            },
+            {
+              "ref": "1.4",
+              "text": "Properties of Regular Language, Pumping Lemma, Non Regular Languages"
+            }
+          ]
+        },
+        {
+          "module_no": 2,
+          "topics": [
+            {
+              "ref": "2.1",
+              "text": "Pushdown Automaton (PDA), Non-Deterministic Pushdown Automaton (NPDA)"
+            },
+            {
+              "ref": "2.2",
+              "text": "Context Free Grammar, Chomsky Normal Form, Greibach Normal Form"
+            },
+            {
+              "ref": "2.3",
+              "text": "Ambiguity, Parse Tree Representation of Derivation Trees"
+            },
+            {
+              "ref": "2.4",
+              "text": "Equivalence of PDAs and Context Free Grammars; Properties of Context Free Language. Lab Exercises"
+            }
+          ]
+        },
+        {
+          "module_no": 3,
+          "topics": [
+            {
+              "ref": "3.1",
+              "text": "Introduction to compiling, Compilers"
+            },
+            {
+              "ref": "3.2",
+              "text": "Analysis of a source program, the phases of a compiler"
+            },
+            {
+              "ref": "3.3",
+              "text": "Lexical analysis: the role of the lexical analyser, Input buffering, specification of tokens"
+            },
+            {
+              "ref": "3.4",
+              "text": "Recognition of tokens"
+            }
+          ]
+        },
+        {
+          "module_no": 4,
+          "topics": [
+            {
+              "ref": "4.1",
+              "text": "Syntax analysis: the role of the parser, Top down parsing, Bottom up parsing"
+            },
+            {
+              "ref": "4.2",
+              "text": "Syntax directed translation, syntax directed definition, Construction of Syntax Tree"
+            },
+            {
+              "ref": "4.3",
+              "text": "LL parsers, Operator precedence grammar"
+            },
+            {
+              "ref": "4.4",
+              "text": "LR(0), SLR parser, LALR(1) parser"
+            }
+          ]
+        },
+        {
+          "module_no": 5,
+          "topics": [
+            {
+              "ref": "5.1",
+              "text": "Intermediate code generation: postfix notation, syntax tree"
+            },
+            {
+              "ref": "5.2",
+              "text": "Three-address code, basic blocks and flow graph, Back patching"
+            },
+            {
+              "ref": "5.3",
+              "text": "Code optimization: the principal sources of optimization, optimization of basic blocks, loops in flow graphs"
+            },
+            {
+              "ref": "5.4",
+              "text": "Peephole optimization; Code Generation: issues in the design of a code generator"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MCA303",
+      "name": "Machine Learning",
+      "syllabus_type": "Core",
+      "exam_date": "2026-10-26",
+      "exam_time": "9:30 AM - 12:30 PM",
+      "modules": [
+        {
+          "module_no": 1,
+          "topics": [
+            {
+              "ref": "1.1",
+              "text": "Data Warehousing, Multidimensional Data Model, OLAP Operations, Knowledge Discovery in Databases (KDD) Process, Data Mining Functionalities, Classification of Data Mining Systems"
+            },
+            {
+              "ref": "1.2",
+              "text": "Data Preprocessing (Data Cleaning, Integration, Transformation, Reduction, Discretization, Concept Hierarchy Generation)"
+            },
+            {
+              "ref": "1.3",
+              "text": "Exploring Data and Visualization Techniques (Visualizing Higher-Dimensional Data)"
+            },
+            {
+              "ref": "1.4",
+              "text": "Tools: Python (Matplotlib, Seaborn), Orange"
+            }
+          ]
+        },
+        {
+          "module_no": 2,
+          "topics": [
+            {
+              "ref": "2.1",
+              "text": "Regression (Linear Regression, Nonlinear Regression, Lasso Regression, Ridge Regression)"
+            },
+            {
+              "ref": "2.2",
+              "text": "Classification (Decision Tree Induction, Attribute Selection Measures, Pruning, Naive Bayesian Classification, Rule-Based Classification, K-Nearest Neighbour Classifiers, Support Vector Machines (SVM))"
+            },
+            {
+              "ref": "2.3",
+              "text": "Evaluation of Supervised Learning Models (Accuracy, Precision, Recall, F1-Score, Cross-Validation); Tools: scikit-learn, Orange"
+            }
+          ]
+        },
+        {
+          "module_no": 3,
+          "topics": [
+            {
+              "ref": "3.1",
+              "text": "Clustering (Partitioning Methods: K-Means, K-Medoids, CLARANS), Hierarchical Methods (Agglomerative, Divisive)"
+            },
+            {
+              "ref": "3.2",
+              "text": "Density-Based Clustering (DBSCAN), Grid-Based Clustering (STING), Dimensionality Reduction (PCA, t-SNE)"
+            },
+            {
+              "ref": "3.3",
+              "text": "Evaluation of Clustering Methods"
+            },
+            {
+              "ref": "3.4",
+              "text": "Tools: scikit-learn, Orange"
+            }
+          ]
+        },
+        {
+          "module_no": 4,
+          "topics": [
+            {
+              "ref": "4.1",
+              "text": "Ensemble Methods (Bagging, Boosting: AdaBoost, Gradient Boosting, Random Forests), Neural Networks (Perceptrons, Multi-Layer Perceptrons (MLPs))"
+            },
+            {
+              "ref": "4.2",
+              "text": "Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs)"
+            },
+            {
+              "ref": "4.3",
+              "text": "Optimization Techniques (Gradient Descent Variants, Hyperparameter Tuning: Grid Search, Random Search)"
+            },
+            {
+              "ref": "4.4",
+              "text": "Tools: TensorFlow, Keras, XGBoost"
+            }
+          ]
+        },
+        {
+          "module_no": 5,
+          "topics": [
+            {
+              "ref": "5.1",
+              "text": "Introduction to NLP, Text Preprocessing (Tokenization, Stopword Removal, Lemmatization, Stemming)"
+            },
+            {
+              "ref": "5.2",
+              "text": "Text Representation (Bag-of-Words, TF-IDF, Word Embeddings: Word2Vec, GloVe), Sentiment Analysis, Named Entity Recognition, Topic Modeling"
+            },
+            {
+              "ref": "5.3",
+              "text": "Tools: NLTK, SpaCy, scikit-learn, TensorFlow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MCA304",
+      "name": "Cyber Security Essentials",
+      "syllabus_type": "Core",
+      "exam_date": "2026-10-28",
+      "exam_time": "9:30 AM - 12:30 PM",
+      "modules": [
+        {
+          "module_no": 1,
+          "topics": [
+            {
+              "ref": "1.1",
+              "text": "Basics of digital security, protecting personal computers and devices, protecting devices from Virus and Malware"
+            },
+            {
+              "ref": "1.2",
+              "text": "Identity, Authentication and Authorization, need for strong credentials, keeping credentials secure"
+            },
+            {
+              "ref": "1.3",
+              "text": "Protecting servers using physical and logical security"
+            },
+            {
+              "ref": "1.4",
+              "text": "World Wide Web (www), the Internet and the HTTP protocol, security of browser to web server interaction"
+            }
+          ]
+        },
+        {
+          "module_no": 2,
+          "topics": [
+            {
+              "ref": "2.1",
+              "text": "Introduction to cyber-attacks, application security (design, development and testing)"
+            },
+            {
+              "ref": "2.2",
+              "text": "Operations security, monitoring, identifying threats and remediating them"
+            },
+            {
+              "ref": "2.3",
+              "text": "Principles of data security: Confidentiality, Integrity and Availability"
+            },
+            {
+              "ref": "2.4",
+              "text": "Data Privacy, Data breaches, preventing attacks and breaches with security controls"
+            }
+          ]
+        },
+        {
+          "module_no": 3,
+          "topics": [
+            {
+              "ref": "3.1",
+              "text": "Compliance standards, Computer Ethics"
+            },
+            {
+              "ref": "3.2",
+              "text": "OWASP Top 10: Types of Web attacks - SQL Injection, Cross site scripting"
+            },
+            {
+              "ref": "3.3",
+              "text": "Brute Force, Buffer Overflow, Man in the middle attack"
+            },
+            {
+              "ref": "3.4",
+              "text": "Denial of Service"
+            }
+          ]
+        },
+        {
+          "module_no": 4,
+          "topics": [
+            {
+              "ref": "4.1",
+              "text": "Hash Functions and MAC: Properties of hash functions, birthday attack, hash cash"
+            },
+            {
+              "ref": "4.2",
+              "text": "Message Authentication code Algorithms, MAC protocols, HMAC, CMAC"
+            },
+            {
+              "ref": "4.3",
+              "text": "Digital Signature: Classification of signature schemes: RSA Signature, Digital Signature Standard"
+            }
+          ]
+        },
+        {
+          "module_no": 5,
+          "topics": [
+            {
+              "ref": "5.1",
+              "text": "Overview of ElGamal and Schnorr schemes, One-time signature schemes, Attacks on Digital Signatures, Blind Signatures"
+            },
+            {
+              "ref": "5.2",
+              "text": "Firewalls, packet filter and stateful firewalls, application aware firewalls, personal firewalls-IPtables, Proxies, NAT"
+            },
+            {
+              "ref": "5.3",
+              "text": "Intrusion Detection System-Snort, Signature and Anomaly based detection"
+            },
+            {
+              "ref": "5.4",
+              "text": "Honeypots and Honeynets. Network Log management-syslog or SPLUNK"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MCA322",
+      "name": ".NET",
+      "syllabus_type": "Specialization",
+      "exam_date": "2026-10-30",
+      "exam_time": "9:30 AM - 12:30 PM",
+      "modules": [
+        {
+          "module_no": 1,
+          "topics": [
+            {
+              "ref": "1.1",
+              "text": "Introduction to C# and .NET: Setting up Visual Studio and the .NET development environment, .NET architecture, Data Types, Variables, and Constants. Control Flow and Decision Making - Conditional Statements (if, else, switch), Loops (for, while, do-while), Operators"
+            },
+            {
+              "ref": "1.2",
+              "text": "Exception Handling: try-catch blocks. Methods and Functions - Method overloading, Scope and Visibility. Object-Oriented Programming (OOP) Basics - Classes and Objects, Constructors and Destructors, Properties and Fields"
+            },
+            {
+              "ref": "1.3",
+              "text": "Inheritance - Types of inheritance, Method Overriding, Polymorphism, Encapsulation, Abstract Classes and Interfaces, Collections and Generics"
+            }
+          ]
+        },
+        {
+          "module_no": 2,
+          "topics": [
+            {
+              "ref": "2.1",
+              "text": "ADO.Net: Basic window control, Architecture of ADO.Net"
+            },
+            {
+              "ref": "2.2",
+              "text": "Comparison with ADO, Connected and Disconnected Database, Create Connection using ADO.NET Object Model, Connection Class, .Net Data provider, Data Adapter, Data Set"
+            },
+            {
+              "ref": "2.3",
+              "text": "Data Row, Data Column, Data Relation, command, Data Reader, Language integrated query (LINQ)"
+            }
+          ]
+        },
+        {
+          "module_no": 3,
+          "topics": [
+            {
+              "ref": "3.1",
+              "text": "I/O and Object Serialization: Object serialization and Remoting: System.IO, Streams, TextWriter, TextReader"
+            },
+            {
+              "ref": "3.2",
+              "text": "Binary Writer, BinaryReader, Serialized Object Persistence and formatters"
+            },
+            {
+              "ref": "3.3",
+              "text": "binary formatter, soap formatter"
+            }
+          ]
+        },
+        {
+          "module_no": 4,
+          "topics": [
+            {
+              "ref": "4.1",
+              "text": "Remoting - Distributed Applications, COM/DCOM in Distributed Environment, Drawbacks of DCOM"
+            },
+            {
+              "ref": "4.2",
+              "text": ".NET Remoting - New distributed environment, Advantages & Disadvantages, Implementing a Simple Remoting Client and Server"
+            },
+            {
+              "ref": "4.3",
+              "text": "Network programming: Socket programming, TCP/IP, UDP"
+            }
+          ]
+        },
+        {
+          "module_no": 5,
+          "topics": [
+            {
+              "ref": "5.1",
+              "text": "Windows Forms Application: Introduction to Windows Forms, Basics of Windows Forms and setup"
+            },
+            {
+              "ref": "5.2",
+              "text": "Creating a simple GUI application. Common controls - Textbox, Button, CheckBox, RadioButtons, ComboBox, GroupBox etc. and event handling"
+            },
+            {
+              "ref": "5.3",
+              "text": "Creating menus and toolbars, Using dialog boxes and managing multiple forms, Forms Database programming, Binding controls to data sources"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MCA301",
+      "name": "Internet of Things",
+      "syllabus_type": "Core (listed as Lab on the exam timetable)",
+      "exam_date": "2026-11-02",
+      "exam_time": "9:30 AM - 4:30 PM",
+      "modules": [
+        {
+          "module_no": 1,
+          "topics": [
+            {
+              "ref": "1.1",
+              "text": "Overview of IoT concepts and applications"
+            },
+            {
+              "ref": "1.2",
+              "text": "Evolution and history of IoT"
+            },
+            {
+              "ref": "1.3",
+              "text": "Key components of IoT systems (devices, connectivity, platforms), IoT architectures and communication protocols"
+            },
+            {
+              "ref": "1.4",
+              "text": "Privacy and security considerations in IoT"
+            }
+          ]
+        },
+        {
+          "module_no": 2,
+          "topics": [
+            {
+              "ref": "2.1",
+              "text": "Introduction to IoT hardware components (sensors, actuators, microcontrollers)"
+            },
+            {
+              "ref": "2.2",
+              "text": "Understanding sensor types (temperature, humidity, motion, etc.)"
+            },
+            {
+              "ref": "2.3",
+              "text": "Basics of Arduino and Raspberry Pi for IoT projects, Connecting sensors and actuators to microcontrollers"
+            },
+            {
+              "ref": "2.4",
+              "text": "Hands-on exercises on basic sensor interfacing"
+            }
+          ]
+        },
+        {
+          "module_no": 3,
+          "topics": [
+            {
+              "ref": "3.1",
+              "text": "Basics of communication protocols (MQTT, CoAP, HTTP)"
+            },
+            {
+              "ref": "3.2",
+              "text": "Wireless communication technologies for IoT (Wi-Fi, Bluetooth, Zigbee)"
+            },
+            {
+              "ref": "3.3",
+              "text": "Setting up IoT networks, Introduction to IoT cloud platforms"
+            },
+            {
+              "ref": "3.4",
+              "text": "Hands-on exercises on sending and receiving data over IoT networks"
+            }
+          ]
+        },
+        {
+          "module_no": 4,
+          "topics": [
+            {
+              "ref": "4.1",
+              "text": "Introduction to data analytics in IoT, Basics of data visualization tools"
+            },
+            {
+              "ref": "4.2",
+              "text": "Analysing and interpreting IoT data"
+            },
+            {
+              "ref": "4.3",
+              "text": "Machine learning for IoT applications"
+            },
+            {
+              "ref": "4.4",
+              "text": "Hands-on exercises on basic data analytics using IoT data"
+            }
+          ]
+        },
+        {
+          "module_no": 5,
+          "topics": [
+            {
+              "ref": "5.1",
+              "text": "Overview of IoT project lifecycle"
+            },
+            {
+              "ref": "5.1a",
+              "text": "Planning and designing an IoT project"
+            },
+            {
+              "ref": "5.2",
+              "text": "Implementation and coding for IoT applications"
+            },
+            {
+              "ref": "5.3",
+              "text": "Testing and troubleshooting IoT projects"
+            },
+            {
+              "ref": "5.4",
+              "text": "Final project presentation and evaluation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MCA306",
+      "name": "Data Analytics using Python",
+      "syllabus_type": "Lab",
+      "exam_date": "2026-11-04",
+      "exam_time": "9:30 AM - 4:30 PM",
+      "modules": [
+        {
+          "module_no": 1,
+          "topics": [
+            {
+              "ref": "1.1",
+              "text": "Introduction to Python: using the Python interpreter, Overview of programming in Python, Expressions and Variables, String Operations"
+            },
+            {
+              "ref": "1.2",
+              "text": "Python Data Structures: lists & tuples, sets, dictionaries"
+            },
+            {
+              "ref": "1.3",
+              "text": "Programming Fundamentals: Conditions and Branching, Loops"
+            },
+            {
+              "ref": "1.4",
+              "text": "Functions: formal arguments, variable-length arguments"
+            }
+          ]
+        },
+        {
+          "module_no": 2,
+          "topics": [
+            {
+              "ref": "2.1",
+              "text": "Classes, files and modules. Introduction to Classes and Objects: classes, class attributes, instances, instance attributes, binding and method invocation"
+            },
+            {
+              "ref": "2.2",
+              "text": "Inheritance, polymorphism, Built-in functions for classes and instances"
+            },
+            {
+              "ref": "2.3",
+              "text": "Files and input/output, reading and writing files, methods of file objects using standard library functions"
+            },
+            {
+              "ref": "2.4",
+              "text": "Dates and times. Exceptions, detecting and handling exceptions"
+            }
+          ]
+        },
+        {
+          "module_no": 3,
+          "topics": [
+            {
+              "ref": "3.1",
+              "text": "Database and web programming: Python database application programmer's interface (DB-API)"
+            },
+            {
+              "ref": "3.2",
+              "text": "Connection and cursor objects"
+            },
+            {
+              "ref": "3.3",
+              "text": "Type objects and constructors, python database adapters"
+            },
+            {
+              "ref": "3.4",
+              "text": "Creating simple web clients, introduction to CGI, CGI module, building CGI applications"
+            }
+          ]
+        },
+        {
+          "module_no": 4,
+          "topics": [
+            {
+              "ref": "4.1",
+              "text": "Introduction to Data Science using Python. Python libraries: NumPy, Scikit, Pandas, Matplotlib. Data Visualization"
+            },
+            {
+              "ref": "4.2",
+              "text": "Importing Datasets: Importing and Exporting Data in Python, Basic Insights from Datasets"
+            },
+            {
+              "ref": "4.3",
+              "text": "Data cleansing and pre-processing: Identify and Handle Missing Values"
+            },
+            {
+              "ref": "4.4",
+              "text": "Summarizing the Data Frame: Descriptive Statistics, Basics of Grouping, ANOVA, Correlation"
+            }
+          ]
+        },
+        {
+          "module_no": 5,
+          "topics": [
+            {
+              "ref": "5.1",
+              "text": "Model Development and Evaluation. Regression Models: Linear Regression (SLR & MLR)"
+            },
+            {
+              "ref": "5.2",
+              "text": "Logistic Regression, Decision Tree, Random Forest"
+            },
+            {
+              "ref": "5.3",
+              "text": "Clustering Techniques: K means clustering, Apriori algorithm"
+            },
+            {
+              "ref": "5.4",
+              "text": "Model Evaluation: Over-fitting, Underfitting"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MCA307",
+      "name": "Android",
+      "syllabus_type": "Lab",
+      "exam_date": "2026-11-06",
+      "exam_time": "9:30 AM - 4:30 PM",
+      "modules": [
+        {
+          "module_no": 1,
+          "topics": [
+            {
+              "ref": "1.1",
+              "text": "Mobile Computing & Development Introduction: Mobile system architecture and development challenges"
+            },
+            {
+              "ref": "1.2",
+              "text": "The Android Platform: Android SDK Features, Introduction to the Development Framework, Android Development Tools"
+            },
+            {
+              "ref": "1.3",
+              "text": "Android Application Life Cycle, Activity, Service, Intent, MVC and User Interfaces"
+            },
+            {
+              "ref": "1.4",
+              "text": "Application Structure: AndroidManifest.xml, uses-permission & uses-sdk, Resources & R.java, Assets, Layouts & Drawable Resources, Activities and Activity lifecycle"
+            }
+          ]
+        },
+        {
+          "module_no": 2,
+          "topics": [
+            {
+              "ref": "2.1",
+              "text": "Android Graphical User Interface: Linear Layout, Relative Layout, Table Layout, Grid View, Tab Layout, List View, Custom List View Element"
+            },
+            {
+              "ref": "2.2",
+              "text": "Fragments"
+            },
+            {
+              "ref": "2.3",
+              "text": "Popup Menus: Option menu, Context menu"
+            },
+            {
+              "ref": "2.4",
+              "text": "Sub menu, menu from xml, menu via code"
+            }
+          ]
+        },
+        {
+          "module_no": 3,
+          "topics": [
+            {
+              "ref": "3.1",
+              "text": "Intents - Explicit Intents, Implicit intents, intents and broadcast receivers, intent filters"
+            },
+            {
+              "ref": "3.2",
+              "text": "Adapters and Widgets: ArrayAdapters, BaseAdapters, ListView and ListActivity"
+            },
+            {
+              "ref": "3.3",
+              "text": "Notifications: Broadcast Receivers"
+            },
+            {
+              "ref": "3.4",
+              "text": "Services - Types of services"
+            }
+          ]
+        },
+        {
+          "module_no": 4,
+          "topics": [
+            {
+              "ref": "4.1",
+              "text": "Introduction to Content Providers - Types of content providers"
+            },
+            {
+              "ref": "4.2",
+              "text": "Databases and Content Providers: SQLite Databases: Basics of SQLite DB, Various Data Types"
+            },
+            {
+              "ref": "4.3",
+              "text": "SQLite Queries, Adding / Updating / Deleting Contents of SQLite"
+            },
+            {
+              "ref": "4.4",
+              "text": "Android Webserver communication with external database"
+            }
+          ]
+        },
+        {
+          "module_no": 5,
+          "topics": [
+            {
+              "ref": "5.1",
+              "text": "Advanced Features: JSON Parsing"
+            },
+            {
+              "ref": "5.2",
+              "text": "Maps, GPS, Location based Services"
+            },
+            {
+              "ref": "5.3",
+              "text": "Accessing Phone services (Call, SMS, MMS), Network connectivity services"
+            },
+            {
+              "ref": "5.4",
+              "text": "Hardware Sensors: Sensors and Sensor Managers, Monitoring device movement and orientation, Environmental sensors"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

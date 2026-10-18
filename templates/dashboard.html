@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — MCA Revision Dossier{% endblock %}
+
+{% block content %}
+<section class="dashboard-hero">
+  <div class="hero-text-wrap">
+    <span class="mono-tag">// CASE LOG: EXAM READINESS</span>
+    <h1 class="hero-title">Revision Status Report</h1>
+    <p class="hero-subtitle">
+      Tracking preparation across all 7 MCA examination subjects. Every checked topic closes the gap between the syllabus and exam day.
+    </p>
+  </div>
+
+  <!-- Overall Progress Banner -->
+  <div class="overall-banner">
+    <div class="overall-stats-grid">
+      <div>
+        <div class="overall-label">
+          <svg class="svg-icon" viewBox="0 0 24 24" style="color: var(--color-streetlamp-yellow);">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          Overall Syllabus Coverage
+        </div>
+        <p class="overall-description">
+          Total syllabus topics revised across all modules and examinations.
+        </p>
+      </div>
+      <div class="overall-numbers">
+        <div class="big-percentage">{{ overall.percent }}%</div>
+        <div class="fraction-count">{{ overall.done }} / {{ overall.total }} topics complete</div>
+      </div>
+    </div>
+    <div class="progress-bar-container" role="progressbar" aria-valuenow="{{ overall.percent }}" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar-fill" style="width: {{ overall.percent }}%;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Subject Cards Section -->
+<section class="subjects-section">
+  <div class="section-heading-wrap">
+    <h2 class="section-title">
+      <svg class="svg-icon" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      Syllabus by Exam Schedule
+    </h2>
+    <span class="mono-tag">Chronological Order</span>
+  </div>
+
+  <div class="cards-asymmetric-grid">
+    {% for subject in overall.subjects %}
+    <a href="{{ url_for('subject_page', code=subject.code) }}" class="subject-card" id="card-{{ subject.code }}">
+      <div>
+        <div class="card-top-meta">
+          <span class="code-pill">{{ subject.code }}</span>
+          <span class="exam-timeline-badge">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            {{ subject.exam_date_display }}
+          </span>
+        </div>
+
+        <h3 class="subject-name">{{ subject.name }}</h3>
+
+        <div class="exam-schedule">
+          <div>
+            <strong>Date:</strong> {{ subject.exam_date }} ({{ subject.exam_date_display }})
+          </div>
+          <div>
+            <strong>Time:</strong> {{ subject.exam_time }}
+          </div>
+        </div>
+      </div>
+
+      <div class="card-progress-footer">
+        <div class="progress-header-row">
+          <span>{{ subject.done }} / {{ subject.total }} topics</span>
+          <span class="progress-pct-text">{{ subject.percent }}%</span>
+        </div>
+        <div class="progress-bar-container" role="progressbar" aria-valuenow="{{ subject.percent }}" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar-fill" style="width: {{ subject.percent }}%;"></div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
