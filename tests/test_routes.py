@@ -28,8 +28,8 @@ class TestRoutes(unittest.TestCase):
         for code in expected_codes:
             self.assertIn(code, html)
 
-        # Check total count mentions 133
-        self.assertIn("133", html)
+        # Check total count mentions 388
+        self.assertIn("388", html)
 
     def test_subject_page_valid_returns_200(self):
         """GET /subject/MCA302 returns 200 with syllabus modules and topics."""
@@ -40,7 +40,7 @@ class TestRoutes(unittest.TestCase):
         self.assertIn("Theory of Computation and Compilers", html)
         self.assertIn("Module 1", html)
         self.assertIn("Module 5", html)
-        self.assertIn("MCA302-1-1.1", html)
+        self.assertIn("MCA302-1-1.1.1", html)
 
     def test_subject_page_invalid_returns_404(self):
         """GET /subject/XYZ returns 404."""
@@ -49,7 +49,7 @@ class TestRoutes(unittest.TestCase):
 
     def test_toggle_route_returns_updated_counts(self):
         """POST /toggle/<topic_id> flips done and returns JSON with updated counts."""
-        topic_id = "MCA302-1-1.1"
+        topic_id = "MCA302-1-1.1.1"
 
         # Initially 0 done. Toggle to 1
         response = self.client.post(f"/toggle/{topic_id}")
@@ -61,15 +61,15 @@ class TestRoutes(unittest.TestCase):
         self.assertEqual(data["done"], 1)
         self.assertEqual(data["module_no"], 1)
         self.assertEqual(data["module_done"], 1)
-        self.assertEqual(data["module_total"], 4)
-        self.assertEqual(data["module_percent"], 25)
+        self.assertEqual(data["module_total"], 13)
+        self.assertEqual(data["module_percent"], 8)
         self.assertEqual(data["subject_code"], "MCA302")
         self.assertEqual(data["subject_done"], 1)
-        self.assertEqual(data["subject_total"], 20)
-        self.assertEqual(data["subject_percent"], 5)
+        self.assertEqual(data["subject_total"], 53)
+        self.assertEqual(data["subject_percent"], 2)
         self.assertEqual(data["overall_done"], 1)
-        self.assertEqual(data["overall_total"], 133)
-        self.assertEqual(data["overall_percent"], 1)
+        self.assertEqual(data["overall_total"], 388)
+        self.assertEqual(data["overall_percent"], 0)
 
         # Toggle back to 0
         response2 = self.client.post(f"/toggle/{topic_id}")
@@ -97,7 +97,7 @@ class TestRoutes(unittest.TestCase):
 
     def test_vercel_rewrite_toggle(self):
         """Simulate Vercel routing /toggle/<id> via /api/index?__path=toggle/<id>."""
-        topic_id = "MCA302-1-1.1"
+        topic_id = "MCA302-1-1.1.1"
         response = self.client.post(f"/api/index?__path=toggle/{topic_id}")
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.get_data(as_text=True))

@@ -48,7 +48,8 @@ let unsubscribeFirestore = null;
 
 // Function to update all DOM elements based on progressState
 function updateDOM() {
-  const totalSyllabusTopics = 133;
+  const banner = document.getElementById("overall-banner");
+  const totalSyllabusTopics = banner ? (parseInt(banner.dataset.overallTotal, 10) || 388) : 388;
 
   // 1. Check if we are on Dashboard
   const subjectCards = document.querySelectorAll(".subject-card");

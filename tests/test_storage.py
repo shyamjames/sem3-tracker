@@ -15,14 +15,14 @@ class TestStorage(unittest.TestCase):
         self.temp_dir.cleanup()
 
     def test_seeding_creates_exact_counts(self):
-        """First run creates exactly 7 subjects and 133 topics, all with done = 0."""
+        """First run creates exactly 7 subjects and 388 granular topics, all with done = 0."""
         storage.init_db(self.db_path)
 
         subjects = storage.get_all_subjects(self.db_path)
         self.assertEqual(len(subjects), 7)
 
         topics = storage.get_all_topics(self.db_path)
-        self.assertEqual(len(topics), 133)
+        self.assertEqual(len(topics), 388)
         self.assertTrue(all(t["done"] == 0 for t in topics))
 
         # Check expected subject codes
@@ -30,15 +30,15 @@ class TestStorage(unittest.TestCase):
         expected_codes = ["MCA302", "MCA303", "MCA304", "MCA322", "MCA301", "MCA306", "MCA307"]
         self.assertEqual(codes, expected_codes)
 
-        # Check per-subject topic counts match Section 3.1
+        # Check per-subject topic counts match granularized syllabus
         expected_counts = {
-            "MCA302": 20,
-            "MCA303": 18,
-            "MCA304": 19,
-            "MCA322": 15,
-            "MCA301": 21,
-            "MCA306": 20,
-            "MCA307": 20,
+            "MCA302": 53,
+            "MCA303": 70,
+            "MCA304": 55,
+            "MCA322": 59,
+            "MCA301": 39,
+            "MCA306": 53,
+            "MCA307": 59,
         }
         for code, expected_cnt in expected_counts.items():
             subj_topics = storage.get_topics_for_subject(code, self.db_path)
@@ -49,18 +49,18 @@ class TestStorage(unittest.TestCase):
         storage.init_db(self.db_path)
 
         # Toggle a topic
-        topic_id = "MCA302-1-1.1"
+        topic_id = "MCA302-1-1.1.1"
         updated = storage.toggle_topic(topic_id, self.db_path)
         self.assertEqual(updated["done"], 1)
 
         # Simulate app restart by re-invoking init_db
         storage.init_db(self.db_path)
 
-        # Verify counts are still 7 and 133
+        # Verify counts are still 7 and 388
         subjects = storage.get_all_subjects(self.db_path)
         self.assertEqual(len(subjects), 7)
         topics = storage.get_all_topics(self.db_path)
-        self.assertEqual(len(topics), 133)
+        self.assertEqual(len(topics), 388)
 
         # Verify the toggled topic is still done = 1
         persisted = storage.get_topic_by_id(topic_id, self.db_path)
@@ -70,7 +70,7 @@ class TestStorage(unittest.TestCase):
     def test_toggle_round_trip(self):
         """Toggling 0 -> 1 -> 0 works and returns updated row."""
         storage.init_db(self.db_path)
-        topic_id = "MCA303-2-2.1"
+        topic_id = "MCA303-2-2.1.1"
 
         initial = storage.get_topic_by_id(topic_id, self.db_path)
         self.assertEqual(initial["done"], 0)
@@ -92,7 +92,7 @@ class TestStorage(unittest.TestCase):
     def test_only_done_changes(self):
         """Toggling a topic changes only 'done', preserving all other syllabus columns."""
         storage.init_db(self.db_path)
-        topic_id = "MCA304-3-3.1"
+        topic_id = "MCA304-3-3.1.1"
 
         before = dict(storage.get_topic_by_id(topic_id, self.db_path))
         storage.toggle_topic(topic_id, self.db_path)

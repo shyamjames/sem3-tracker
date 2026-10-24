@@ -66,9 +66,21 @@ def init_db(db_path: Optional[str] = None, seed_path: Optional[str] = None) -> N
         cursor.execute("SELECT COUNT(*) FROM subjects;")
         subjects_count = cursor.fetchone()[0]
 
-        if subjects_count == 0:
-            with open(seed_file, "r", encoding="utf-8") as f:
-                seed_data = json.load(f)
+        cursor.execute("SELECT COUNT(*) FROM topics;")
+        topics_count = cursor.fetchone()[0]
+
+        with open(seed_file, "r", encoding="utf-8") as f:
+            seed_data = json.load(f)
+
+        seed_topics_count = sum(
+            len(m.get("topics", []))
+            for s in seed_data.get("subjects", [])
+            for m in s.get("modules", [])
+        )
+
+        if subjects_count == 0 or topics_count != seed_topics_count:
+            cursor.execute("DELETE FROM topics;")
+            cursor.execute("DELETE FROM subjects;")
 
             for subject in seed_data.get("subjects", []):
                 code = subject["code"]
