@@ -134,6 +134,16 @@ def create_app(db_path: Optional[str] = None, test_config: Optional[Dict[str, An
             }
         )
 
+    @app.route("/toggle-batch", methods=["POST"])
+    def toggle_batch():
+        """Batch toggle multiple topics (e.g. for checking an entire module or section)."""
+        db = app.config["DATABASE"]
+        data = request.get_json(silent=True) or {}
+        topic_ids = data.get("topic_ids", [])
+        done = bool(data.get("done", True))
+        count = storage.set_topics_done_batch(topic_ids, done, db)
+        return jsonify({"success": True, "count": count})
+
     @app.errorhandler(404)
     def not_found(e):
         """Handle 404 errors for both API and browser requests."""

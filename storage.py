@@ -54,6 +54,7 @@ def init_db(db_path: Optional[str] = None, seed_path: Optional[str] = None) -> N
                 code TEXT NOT NULL,
                 module_no INTEGER NOT NULL,
                 ref TEXT NOT NULL,
+                section_title TEXT NOT NULL DEFAULT '',
                 text TEXT NOT NULL,
                 done INTEGER NOT NULL DEFAULT 0,
                 FOREIGN KEY (code) REFERENCES subjects(code)
@@ -62,6 +63,7 @@ def init_db(db_path: Optional[str] = None, seed_path: Optional[str] = None) -> N
         )
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_topics_code ON topics(code);")
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_topics_module ON topics(code, module_no);")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_topics_ref ON topics(code, module_no, ref);")
 
         cursor.execute("SELECT COUNT(*) FROM subjects;")
         subjects_count = cursor.fetchone()[0]
@@ -73,9 +75,10 @@ def init_db(db_path: Optional[str] = None, seed_path: Optional[str] = None) -> N
             seed_data = json.load(f)
 
         seed_topics_count = sum(
-            len(m.get("topics", []))
+            len(sec.get("topics", []))
             for s in seed_data.get("subjects", [])
             for m in s.get("modules", [])
+            for sec in m.get("sections", [])
         )
 
         if subjects_count == 0 or topics_count != seed_topics_count:
@@ -98,18 +101,21 @@ def init_db(db_path: Optional[str] = None, seed_path: Optional[str] = None) -> N
 
                 for module in subject.get("modules", []):
                     module_no = module["module_no"]
-                    for topic in module.get("topics", []):
-                        ref = topic["ref"]
-                        text = topic["text"]
-                        topic_id = f"{code}-{module_no}-{ref}"
+                    for section in module.get("sections", []):
+                        ref = section["ref"]
+                        sec_title = section.get("title", "")
+                        for t in section.get("topics", []):
+                            sub_id = t.get("sub_id", "1")
+                            topic_text = t.get("text", "")
+                            topic_id = f"{code}-{module_no}-{ref}-{sub_id}"
 
-                        cursor.execute(
-                            """
-                            INSERT INTO topics (topic_id, code, module_no, ref, text, done)
-                            VALUES (?, ?, ?, ?, ?, 0);
-                            """,
-                            (topic_id, code, module_no, ref, text),
-                        )
+                            cursor.execute(
+                                """
+                                INSERT INTO topics (topic_id, code, module_no, ref, section_title, text, done)
+                                VALUES (?, ?, ?, ?, ?, ?, 0);
+                                """,
+                                (topic_id, code, module_no, ref, sec_title, topic_text),
+                            )
             conn.commit()
     finally:
         conn.close()
@@ -144,7 +150,7 @@ def get_topics_for_subject(code: str, db_path: Optional[str] = None) -> List[sql
         cursor = conn.cursor()
         cursor.execute(
             """
-            SELECT topic_id, code, module_no, ref, text, done
+            SELECT topic_id, code, module_no, ref, section_title, text, done
             FROM topics
             WHERE code = ?
             ORDER BY module_no ASC, rowid ASC;
@@ -161,7 +167,7 @@ def get_all_topics(db_path: Optional[str] = None) -> List[sqlite3.Row]:
     conn = get_db_connection(db_path)
     try:
         cursor = conn.cursor()
-        cursor.execute("SELECT topic_id, code, module_no, ref, text, done FROM topics ORDER BY rowid ASC;")
+        cursor.execute("SELECT topic_id, code, module_no, ref, section_title, text, done FROM topics ORDER BY rowid ASC;")
         return cursor.fetchall()
     finally:
         conn.close()
@@ -173,7 +179,7 @@ def get_topic_by_id(topic_id: str, db_path: Optional[str] = None) -> Optional[sq
     try:
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT topic_id, code, module_no, ref, text, done FROM topics WHERE topic_id = ?;",
+            "SELECT topic_id, code, module_no, ref, section_title, text, done FROM topics WHERE topic_id = ?;",
             (topic_id,),
         )
         return cursor.fetchone()
@@ -199,10 +205,32 @@ def toggle_topic(topic_id: str, db_path: Optional[str] = None) -> Optional[sqlit
         conn.commit()
 
         cursor.execute(
-            "SELECT topic_id, code, module_no, ref, text, done FROM topics WHERE topic_id = ?;",
+            "SELECT topic_id, code, module_no, ref, section_title, text, done FROM topics WHERE topic_id = ?;",
             (topic_id,),
         )
         return cursor.fetchone()
+    finally:
+        conn.close()
+
+
+def set_topics_done_batch(
+    topic_ids: List[str],
+    done: bool,
+    db_path: Optional[str] = None,
+) -> int:
+    """Batch update the done state for a list of topic IDs."""
+    if not topic_ids:
+        return 0
+    conn = get_db_connection(db_path)
+    try:
+        cursor = conn.cursor()
+        done_val = 1 if done else 0
+        cursor.executemany(
+            "UPDATE topics SET done = ? WHERE topic_id = ?;",
+            [(done_val, t_id) for t_id in topic_ids],
+        )
+        conn.commit()
+        return cursor.rowcount
     finally:
         conn.close()
 

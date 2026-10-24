@@ -40,7 +40,7 @@ class TestRoutes(unittest.TestCase):
         self.assertIn("Theory of Computation and Compilers", html)
         self.assertIn("Module 1", html)
         self.assertIn("Module 5", html)
-        self.assertIn("MCA302-1-1.1.1", html)
+        self.assertIn("MCA302-1-1.1-1", html)
 
     def test_subject_page_invalid_returns_404(self):
         """GET /subject/XYZ returns 404."""
@@ -49,7 +49,7 @@ class TestRoutes(unittest.TestCase):
 
     def test_toggle_route_returns_updated_counts(self):
         """POST /toggle/<topic_id> flips done and returns JSON with updated counts."""
-        topic_id = "MCA302-1-1.1.1"
+        topic_id = "MCA302-1-1.1-1"
 
         # Initially 0 done. Toggle to 1
         response = self.client.post(f"/toggle/{topic_id}")
@@ -97,12 +97,30 @@ class TestRoutes(unittest.TestCase):
 
     def test_vercel_rewrite_toggle(self):
         """Simulate Vercel routing /toggle/<id> via /api/index?__path=toggle/<id>."""
-        topic_id = "MCA302-1-1.1.1"
+        topic_id = "MCA302-1-1.1-1"
         response = self.client.post(f"/api/index?__path=toggle/{topic_id}")
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.get_data(as_text=True))
         self.assertTrue(data["success"])
         self.assertEqual(data["topic_id"], topic_id)
+
+    def test_toggle_batch(self):
+        """POST /toggle-batch toggles multiple topics at once."""
+        topic_ids = ["MCA302-1-1.1-1", "MCA302-1-1.1-2", "MCA302-1-1.1-3"]
+        response = self.client.post(
+            "/toggle-batch",
+            data=json.dumps({"topic_ids": topic_ids, "done": True}),
+            content_type="application/json",
+        )
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.get_data(as_text=True))
+        self.assertTrue(data["success"])
+        self.assertEqual(data["count"], 3)
+
+        # Verify all are done
+        for t_id in topic_ids:
+            row = storage.get_topic_by_id(t_id, self.db_path)
+            self.assertEqual(row["done"], 1)
 
 
 if __name__ == "__main__":

@@ -49,7 +49,7 @@ class TestStorage(unittest.TestCase):
         storage.init_db(self.db_path)
 
         # Toggle a topic
-        topic_id = "MCA302-1-1.1.1"
+        topic_id = "MCA302-1-1.1-1"
         updated = storage.toggle_topic(topic_id, self.db_path)
         self.assertEqual(updated["done"], 1)
 
@@ -70,7 +70,7 @@ class TestStorage(unittest.TestCase):
     def test_toggle_round_trip(self):
         """Toggling 0 -> 1 -> 0 works and returns updated row."""
         storage.init_db(self.db_path)
-        topic_id = "MCA303-2-2.1.1"
+        topic_id = "MCA303-2-2.1-1"
 
         initial = storage.get_topic_by_id(topic_id, self.db_path)
         self.assertEqual(initial["done"], 0)
@@ -92,7 +92,7 @@ class TestStorage(unittest.TestCase):
     def test_only_done_changes(self):
         """Toggling a topic changes only 'done', preserving all other syllabus columns."""
         storage.init_db(self.db_path)
-        topic_id = "MCA304-3-3.1.1"
+        topic_id = "MCA304-3-3.1-1"
 
         before = dict(storage.get_topic_by_id(topic_id, self.db_path))
         storage.toggle_topic(topic_id, self.db_path)

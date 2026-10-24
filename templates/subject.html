@@ -59,7 +59,16 @@
     <article class="module-card" id="module-section-{{ m_no }}" data-module-no="{{ m_no }}" data-module-total="{{ mod.total }}">
       <header class="module-header">
         <div class="module-title-wrap">
-          <h2 class="module-title">Module {{ m_no }}</h2>
+          <label class="check-all-module-wrap" title="Toggle all topics in Module {{ m_no }}">
+            <input
+              type="checkbox"
+              class="noir-checkbox module-check-all"
+              id="check-mod-{{ m_no }}"
+              data-module-no="{{ m_no }}"
+              aria-label="Toggle all topics in Module {{ m_no }}"
+            >
+            <span class="module-check-label">Module {{ m_no }}</span>
+          </label>
         </div>
         <div class="module-stats">
           <span class="module-count-badge" id="module-badge-{{ m_no }}">
@@ -72,26 +81,58 @@
         <div class="progress-bar-fill" id="module-bar-{{ m_no }}" style="width: {{ mod.percent }}%; height: 100%;"></div>
       </div>
 
-      <ul class="topics-checklist">
-        {% for topic in mod.topics %}
-        <li class="topic-row {% if topic.done %}is-done{% endif %}" id="row-{{ topic.topic_id }}">
-          <div class="topic-checkbox-wrap">
-            <input
-              type="checkbox"
-              class="noir-checkbox topic-checkbox"
-              id="check-{{ topic.topic_id }}"
-              data-topic-id="{{ topic.topic_id }}"
-              {% if topic.done %}checked{% endif %}
-              aria-label="Mark {{ topic.ref }} done"
-            >
+      <!-- Nested Sections Container -->
+      <div class="module-sections-wrap">
+        {% for section in mod.sections %}
+        <div class="section-group" id="section-group-{{ subject.code }}-{{ m_no }}-{{ section.ref }}" data-section-ref="{{ section.ref }}" data-module-no="{{ m_no }}">
+          <!-- Section Header (Outer container with check-all) -->
+          <div class="section-header">
+            <div class="section-header-left">
+              <input
+                type="checkbox"
+                class="noir-checkbox section-check-all"
+                id="check-sec-{{ subject.code }}-{{ m_no }}-{{ section.ref }}"
+                data-module-no="{{ m_no }}"
+                data-section-ref="{{ section.ref }}"
+                aria-label="Toggle all topics in section {{ section.ref }}"
+              >
+              <label for="check-sec-{{ subject.code }}-{{ m_no }}-{{ section.ref }}" class="section-label">
+                <span class="section-ref-badge">{{ section.ref }}</span>
+                <span class="section-title-text">{{ section.title }}</span>
+              </label>
+            </div>
+            <div class="section-header-right">
+              <span class="section-counter-badge" id="section-count-{{ m_no }}-{{ section.ref }}">
+                {{ section.done }} / {{ section.total }}
+              </span>
+            </div>
           </div>
-          <label for="check-{{ topic.topic_id }}" class="topic-content">
-            <span class="topic-ref">{{ topic.ref }}</span>
-            <span class="topic-text">{{ topic.text }}</span>
-          </label>
-        </li>
+
+          <!-- Nested Subtopics List -->
+          <ul class="subtopics-checklist">
+            {% for topic in section.topics %}
+            <li class="topic-row subtopic-row {% if topic.done %}is-done{% endif %}" id="row-{{ topic.topic_id }}">
+              <div class="topic-checkbox-wrap">
+                <input
+                  type="checkbox"
+                  class="noir-checkbox topic-checkbox"
+                  id="check-{{ topic.topic_id }}"
+                  data-topic-id="{{ topic.topic_id }}"
+                  data-module-no="{{ m_no }}"
+                  data-section-ref="{{ section.ref }}"
+                  {% if topic.done %}checked{% endif %}
+                  aria-label="Mark {{ topic.text }} done"
+                >
+              </div>
+              <label for="check-{{ topic.topic_id }}" class="topic-content">
+                <span class="topic-text">{{ topic.text }}</span>
+              </label>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
         {% endfor %}
-      </ul>
+      </div>
     </article>
     {% endif %}
   {% endfor %}

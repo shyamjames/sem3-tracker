@@ -119,17 +119,69 @@ function updateDOM() {
       }
     });
 
-    // Update modules 1 to 5
+    // Update modules, sections & check-all states
     for (let m = 1; m <= 5; m++) {
       const moduleCard = document.getElementById(`module-section-${m}`);
       if (moduleCard) {
         const modTotal = parseInt(moduleCard.dataset.moduleTotal, 10) || 0;
         let modDone = 0;
-        for (const [tId, isDone] of Object.entries(progressState)) {
-          if (isDone && tId.startsWith(`${subjectCode}-${m}-`)) {
+
+        // Find all subtopics in this module
+        const modSubtopics = moduleCard.querySelectorAll(".topic-checkbox");
+        modSubtopics.forEach((cb) => {
+          if (progressState[cb.dataset.topicId]) {
             modDone++;
           }
+        });
+
+        // Update module check-all checkbox
+        const modCheckAll = document.getElementById(`check-mod-${m}`);
+        if (modCheckAll) {
+          if (modDone === modTotal && modTotal > 0) {
+            modCheckAll.checked = true;
+            modCheckAll.indeterminate = false;
+          } else if (modDone > 0) {
+            modCheckAll.checked = false;
+            modCheckAll.indeterminate = true;
+          } else {
+            modCheckAll.checked = false;
+            modCheckAll.indeterminate = false;
+          }
         }
+
+        // Update section check-all checkboxes in this module
+        const sectionGroups = moduleCard.querySelectorAll(".section-group");
+        sectionGroups.forEach((secGroup) => {
+          const secRef = secGroup.dataset.sectionRef;
+          const secSubtopics = secGroup.querySelectorAll(".topic-checkbox");
+          const secTotal = secSubtopics.length;
+          let secDone = 0;
+          secSubtopics.forEach((cb) => {
+            if (progressState[cb.dataset.topicId]) {
+              secDone++;
+            }
+          });
+
+          const secCheckAll = secGroup.querySelector(".section-check-all");
+          if (secCheckAll) {
+            if (secDone === secTotal && secTotal > 0) {
+              secCheckAll.checked = true;
+              secCheckAll.indeterminate = false;
+            } else if (secDone > 0) {
+              secCheckAll.checked = false;
+              secCheckAll.indeterminate = true;
+            } else {
+              secCheckAll.checked = false;
+              secCheckAll.indeterminate = false;
+            }
+          }
+
+          const secCounter = document.getElementById(`section-count-${m}-${secRef}`);
+          if (secCounter) {
+            secCounter.textContent = `${secDone} / ${secTotal}`;
+          }
+        });
+
         const modPct = modTotal > 0 ? Math.round((modDone / modTotal) * 100) : 0;
         const badge = document.getElementById(`module-badge-${m}`);
         const bar = document.getElementById(`module-bar-${m}`);
@@ -149,6 +201,47 @@ function updateDOM() {
     if (subjPctElem) subjPctElem.textContent = `${subjPct}%`;
     if (subjBarElem) subjBarElem.style.width = `${subjPct}%`;
   }
+}
+
+// Batch save topic statuses locally and sync to Firestore
+async function setBatchTopicStatus(topicIds, isDone) {
+  if (!topicIds || topicIds.length === 0) return;
+
+  const updates = {};
+  topicIds.forEach((id) => {
+    progressState[id] = isDone;
+    updates[id] = isDone;
+  });
+
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progressState));
+  } catch (e) {
+    console.warn("Could not save to localStorage:", e);
+  }
+
+  updateDOM();
+
+  // If user is logged in, sync batch to Firestore
+  if (auth.currentUser) {
+    try {
+      const userDocRef = doc(db, "users", auth.currentUser.uid);
+      await setDoc(userDocRef, {
+        topics: updates,
+        updatedAt: new Date().toISOString()
+      }, { merge: true });
+    } catch (err) {
+      console.error("Firestore batch sync error:", err);
+    }
+  }
+
+  // Notify server endpoint in background
+  try {
+    fetch("/toggle-batch", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ topic_ids: topicIds, done: isDone })
+    }).catch(() => {});
+  } catch (_) {}
 }
 
 // Save topic status locally and sync to Firestore
@@ -190,6 +283,31 @@ document.addEventListener("DOMContentLoaded", () => {
   checkboxes.forEach((cb) => {
     cb.addEventListener("change", () => {
       setTopicStatus(cb.dataset.topicId, cb.checked);
+    });
+  });
+
+  // Handle Module Check-All Changes
+  const moduleCheckboxes = document.querySelectorAll(".module-check-all");
+  moduleCheckboxes.forEach((modCb) => {
+    modCb.addEventListener("change", () => {
+      const m = modCb.dataset.moduleNo;
+      const targetDone = modCb.checked;
+      const subtopics = document.querySelectorAll(`.topic-checkbox[data-module-no="${m}"]`);
+      const topicIds = Array.from(subtopics).map((cb) => cb.dataset.topicId);
+      setBatchTopicStatus(topicIds, targetDone);
+    });
+  });
+
+  // Handle Section Check-All Changes
+  const sectionCheckboxes = document.querySelectorAll(".section-check-all");
+  sectionCheckboxes.forEach((secCb) => {
+    secCb.addEventListener("change", () => {
+      const m = secCb.dataset.moduleNo;
+      const secRef = secCb.dataset.sectionRef;
+      const targetDone = secCb.checked;
+      const subtopics = document.querySelectorAll(`.topic-checkbox[data-module-no="${m}"][data-section-ref="${secRef}"]`);
+      const topicIds = Array.from(subtopics).map((cb) => cb.dataset.topicId);
+      setBatchTopicStatus(topicIds, targetDone);
     });
   });
 

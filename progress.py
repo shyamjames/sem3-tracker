@@ -36,17 +36,17 @@ def format_exam_date(iso_date: str) -> str:
 def calculate_module_progress(topics: Sequence[Union[Dict[str, Any], Any]]) -> Dict[int, Dict[str, Any]]:
     """
     Given a list of topics for a subject, group them by module_no (1-5),
-    and calculate total, done, percent, and list of topics for each module.
+    and calculate total, done, percent, list of topics, and grouped sections for each module.
     """
     modules: Dict[int, Dict[str, Any]] = {
-        m: {"module_no": m, "total": 0, "done": 0, "percent": 0, "topics": []}
+        m: {"module_no": m, "total": 0, "done": 0, "percent": 0, "topics": [], "sections": []}
         for m in range(1, 6)
     }
 
     for topic in topics:
         m_no = topic["module_no"]
         if m_no not in modules:
-            modules[m_no] = {"module_no": m_no, "total": 0, "done": 0, "percent": 0, "topics": []}
+            modules[m_no] = {"module_no": m_no, "total": 0, "done": 0, "percent": 0, "topics": [], "sections": []}
         modules[m_no]["total"] += 1
         if topic["done"]:
             modules[m_no]["done"] += 1
@@ -54,6 +54,43 @@ def calculate_module_progress(topics: Sequence[Union[Dict[str, Any], Any]]) -> D
 
     for m_no, m_data in modules.items():
         m_data["percent"] = calculate_percentage(m_data["done"], m_data["total"])
+
+        sections_dict: Dict[str, Dict[str, Any]] = {}
+        for t in m_data["topics"]:
+            s_ref = ""
+            try:
+                s_ref = t["ref"]
+            except Exception:
+                s_ref = ""
+            if not s_ref:
+                s_ref = f"{m_no}.1"
+
+            if s_ref not in sections_dict:
+                s_title = ""
+                try:
+                    s_title = t["section_title"]
+                except Exception:
+                    s_title = ""
+                if not s_title:
+                    s_title = f"Section {s_ref}"
+
+                sections_dict[s_ref] = {
+                    "ref": s_ref,
+                    "title": s_title,
+                    "topics": [],
+                    "total": 0,
+                    "done": 0,
+                    "percent": 0,
+                }
+            sections_dict[s_ref]["topics"].append(t)
+            sections_dict[s_ref]["total"] += 1
+            if t["done"]:
+                sections_dict[s_ref]["done"] += 1
+
+        for s_ref, s_data in sections_dict.items():
+            s_data["percent"] = calculate_percentage(s_data["done"], s_data["total"])
+
+        m_data["sections"] = list(sections_dict.values())
 
     return modules
 

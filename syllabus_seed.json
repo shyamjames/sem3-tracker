@@ -1,5 +1,5 @@
 {
-  "source": "syllabus.pdf (uploaded by user) - Granularized Revision Edition",
+  "source": "syllabus.pdf - Nested Edition",
   "subjects": [
     {
       "code": "MCA302",
@@ -10,238 +10,358 @@
       "modules": [
         {
           "module_no": 1,
-          "topics": [
+          "sections": [
             {
-              "ref": "1.1.1",
-              "text": "Formal Language"
+              "ref": "1.1",
+              "title": "Formal Language & Computability",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Formal Language"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Non-Computational Problems"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Diagonal Argument"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Russell's Paradox"
+                }
+              ]
             },
             {
-              "ref": "1.1.2",
-              "text": "Non-Computational Problems"
+              "ref": "1.2",
+              "title": "Deterministic & Non-Deterministic Finite Automata",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Deterministic Finite Automaton (DFA)"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Non-Deterministic Finite Automaton (NDFA)"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Equivalence of DFA and NDFA"
+                }
+              ]
             },
             {
-              "ref": "1.1.3",
-              "text": "Diagonal Argument"
+              "ref": "1.3",
+              "title": "Regular Languages, Grammars & Expressions",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Regular Languages"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Regular Grammars"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Regular Expressions"
+                }
+              ]
             },
             {
-              "ref": "1.1.4",
-              "text": "Russell's Paradox"
-            },
-            {
-              "ref": "1.2.1",
-              "text": "Deterministic Finite Automaton (DFA)"
-            },
-            {
-              "ref": "1.2.2",
-              "text": "Non-Deterministic Finite Automaton (NDFA)"
-            },
-            {
-              "ref": "1.2.3",
-              "text": "Equivalence of DFA and NDFA"
-            },
-            {
-              "ref": "1.3.1",
-              "text": "Regular Languages"
-            },
-            {
-              "ref": "1.3.2",
-              "text": "Regular Grammars"
-            },
-            {
-              "ref": "1.3.3",
-              "text": "Regular Expressions"
-            },
-            {
-              "ref": "1.4.1",
-              "text": "Properties of Regular Language"
-            },
-            {
-              "ref": "1.4.2",
-              "text": "Pumping Lemma"
-            },
-            {
-              "ref": "1.4.3",
-              "text": "Non Regular Languages"
+              "ref": "1.4",
+              "title": "Properties of Regular Languages & Pumping Lemma",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Properties of Regular Language"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Pumping Lemma"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Non Regular Languages"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 2,
-          "topics": [
+          "sections": [
             {
-              "ref": "2.1.1",
-              "text": "Pushdown Automaton (PDA)"
+              "ref": "2.1",
+              "title": "Pushdown Automata (PDA & NPDA)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Pushdown Automaton (PDA)"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Non-Deterministic Pushdown Automaton (NPDA)"
+                }
+              ]
             },
             {
-              "ref": "2.1.2",
-              "text": "Non-Deterministic Pushdown Automaton (NPDA)"
+              "ref": "2.2",
+              "title": "Context Free Grammars & Normal Forms (CNF, GNF)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Context Free Grammar (CFG)"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Chomsky Normal Form (CNF)"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Greibach Normal Form (GNF)"
+                }
+              ]
             },
             {
-              "ref": "2.2.1",
-              "text": "Context Free Grammar (CFG)"
+              "ref": "2.3",
+              "title": "Ambiguity & Parse Trees",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Ambiguity in CFG"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Parse Tree Representation of Derivation Trees"
+                }
+              ]
             },
             {
-              "ref": "2.2.2",
-              "text": "Chomsky Normal Form (CNF)"
-            },
-            {
-              "ref": "2.2.3",
-              "text": "Greibach Normal Form (GNF)"
-            },
-            {
-              "ref": "2.3.1",
-              "text": "Ambiguity in CFG"
-            },
-            {
-              "ref": "2.3.2",
-              "text": "Parse Tree Representation of Derivation Trees"
-            },
-            {
-              "ref": "2.4.1",
-              "text": "Equivalence of PDAs and Context Free Grammars"
-            },
-            {
-              "ref": "2.4.2",
-              "text": "Properties of Context Free Language"
-            },
-            {
-              "ref": "2.4.3",
-              "text": "Lab Exercises on Automata"
+              "ref": "2.4",
+              "title": "PDA-CFG Equivalence & CFL Properties",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Equivalence of PDAs and Context Free Grammars"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Properties of Context Free Language"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Lab Exercises on Automata"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 3,
-          "topics": [
+          "sections": [
             {
-              "ref": "3.1.1",
-              "text": "Introduction to Compiling"
+              "ref": "3.1",
+              "title": "Introduction to Compilers",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Introduction to Compiling"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Compilers Overview"
+                }
+              ]
             },
             {
-              "ref": "3.1.2",
-              "text": "Compilers Overview"
+              "ref": "3.2",
+              "title": "Analysis of Source Program & Compiler Phases",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Analysis of a Source Program"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Phases of a Compiler"
+                }
+              ]
             },
             {
-              "ref": "3.2.1",
-              "text": "Analysis of a Source Program"
+              "ref": "3.3",
+              "title": "Lexical Analysis & Tokens",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Role of the Lexical Analyser"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Input Buffering"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Specification of Tokens"
+                }
+              ]
             },
             {
-              "ref": "3.2.2",
-              "text": "Phases of a Compiler"
-            },
-            {
-              "ref": "3.3.1",
-              "text": "Role of the Lexical Analyser"
-            },
-            {
-              "ref": "3.3.2",
-              "text": "Input Buffering"
-            },
-            {
-              "ref": "3.3.3",
-              "text": "Specification of Tokens"
-            },
-            {
-              "ref": "3.4.1",
-              "text": "Recognition of Tokens"
+              "ref": "3.4",
+              "title": "Token Recognition",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Recognition of Tokens"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 4,
-          "topics": [
+          "sections": [
             {
-              "ref": "4.1.1",
-              "text": "Role of the Parser"
+              "ref": "4.1",
+              "title": "Syntax Analysis & Parsing Strategies",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Role of the Parser"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Top-down Parsing"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Bottom-up Parsing"
+                }
+              ]
             },
             {
-              "ref": "4.1.2",
-              "text": "Top-down Parsing"
+              "ref": "4.2",
+              "title": "Syntax Directed Translation & Trees",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Syntax-directed Translation"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Syntax-directed Definitions"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Construction of Syntax Trees"
+                }
+              ]
             },
             {
-              "ref": "4.1.3",
-              "text": "Bottom-up Parsing"
+              "ref": "4.3",
+              "title": "LL Parsers & Operator Precedence",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "LL Parsers"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Operator Precedence Grammar"
+                }
+              ]
             },
             {
-              "ref": "4.2.1",
-              "text": "Syntax-directed Translation"
-            },
-            {
-              "ref": "4.2.2",
-              "text": "Syntax-directed Definitions"
-            },
-            {
-              "ref": "4.2.3",
-              "text": "Construction of Syntax Trees"
-            },
-            {
-              "ref": "4.3.1",
-              "text": "LL Parsers"
-            },
-            {
-              "ref": "4.3.2",
-              "text": "Operator Precedence Grammar"
-            },
-            {
-              "ref": "4.4.1",
-              "text": "LR(0) Parser"
-            },
-            {
-              "ref": "4.4.2",
-              "text": "SLR Parser"
-            },
-            {
-              "ref": "4.4.3",
-              "text": "LALR(1) Parser"
+              "ref": "4.4",
+              "title": "LR Parsers (LR0, SLR, LALR1)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "LR(0) Parser"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "SLR Parser"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "LALR(1) Parser"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 5,
-          "topics": [
+          "sections": [
             {
-              "ref": "5.1.1",
-              "text": "Intermediate Code Generation"
+              "ref": "5.1",
+              "title": "Intermediate Code Generation",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Intermediate Code Generation"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Postfix Notation"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Syntax Trees for Intermediate Code"
+                }
+              ]
             },
             {
-              "ref": "5.1.2",
-              "text": "Postfix Notation"
+              "ref": "5.2",
+              "title": "Three-Address Code & Basic Blocks",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Three-address Code"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Basic Blocks and Flow Graphs"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Backpatching"
+                }
+              ]
             },
             {
-              "ref": "5.1.3",
-              "text": "Syntax Trees for Intermediate Code"
+              "ref": "5.3",
+              "title": "Code Optimization Principles & Loops",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Principal Sources of Code Optimization"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Optimization of Basic Blocks"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Loops in Flow Graphs"
+                }
+              ]
             },
             {
-              "ref": "5.2.1",
-              "text": "Three-address Code"
-            },
-            {
-              "ref": "5.2.2",
-              "text": "Basic Blocks and Flow Graphs"
-            },
-            {
-              "ref": "5.2.3",
-              "text": "Backpatching"
-            },
-            {
-              "ref": "5.3.1",
-              "text": "Principal Sources of Code Optimization"
-            },
-            {
-              "ref": "5.3.2",
-              "text": "Optimization of Basic Blocks"
-            },
-            {
-              "ref": "5.3.3",
-              "text": "Loops in Flow Graphs"
-            },
-            {
-              "ref": "5.4.1",
-              "text": "Peephole Optimization"
-            },
-            {
-              "ref": "5.4.2",
-              "text": "Issues in the Design of a Code Generator"
+              "ref": "5.4",
+              "title": "Peephole Optimization & Code Generator Design",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Peephole Optimization"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Issues in the Design of a Code Generator"
+                }
+              ]
             }
           ]
         }
@@ -256,306 +376,414 @@
       "modules": [
         {
           "module_no": 1,
-          "topics": [
+          "sections": [
             {
-              "ref": "1.1.1",
-              "text": "Data Warehousing"
+              "ref": "1.1",
+              "title": "Data Warehousing & Data Mining Systems",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Data Warehousing"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Multidimensional Data Model"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "OLAP Operations"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Knowledge Discovery in Databases (KDD) Process"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Data Mining Functionalities"
+                },
+                {
+                  "sub_id": "6",
+                  "text": "Classification of Data Mining Systems"
+                }
+              ]
             },
             {
-              "ref": "1.1.2",
-              "text": "Multidimensional Data Model"
+              "ref": "1.2",
+              "title": "Data Preprocessing Techniques",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Data Cleaning"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Data Integration"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Data Transformation"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Data Reduction"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Data Discretization"
+                },
+                {
+                  "sub_id": "6",
+                  "text": "Concept Hierarchy Generation"
+                }
+              ]
             },
             {
-              "ref": "1.1.3",
-              "text": "OLAP Operations"
+              "ref": "1.3",
+              "title": "Exploring Data & Visualization",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Exploring Data Techniques"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Data Visualization Techniques"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Visualizing Higher-Dimensional Data"
+                }
+              ]
             },
             {
-              "ref": "1.1.4",
-              "text": "Knowledge Discovery in Databases (KDD) Process"
-            },
-            {
-              "ref": "1.1.5",
-              "text": "Data Mining Functionalities"
-            },
-            {
-              "ref": "1.1.6",
-              "text": "Classification of Data Mining Systems"
-            },
-            {
-              "ref": "1.2.1",
-              "text": "Data Cleaning"
-            },
-            {
-              "ref": "1.2.2",
-              "text": "Data Integration"
-            },
-            {
-              "ref": "1.2.3",
-              "text": "Data Transformation"
-            },
-            {
-              "ref": "1.2.4",
-              "text": "Data Reduction"
-            },
-            {
-              "ref": "1.2.5",
-              "text": "Data Discretization"
-            },
-            {
-              "ref": "1.2.6",
-              "text": "Concept Hierarchy Generation"
-            },
-            {
-              "ref": "1.3.1",
-              "text": "Exploring Data Techniques"
-            },
-            {
-              "ref": "1.3.2",
-              "text": "Data Visualization Techniques"
-            },
-            {
-              "ref": "1.3.3",
-              "text": "Visualizing Higher-Dimensional Data"
-            },
-            {
-              "ref": "1.4.1",
-              "text": "Tools: Python (Matplotlib, Seaborn)"
-            },
-            {
-              "ref": "1.4.2",
-              "text": "Tools: Orange"
+              "ref": "1.4",
+              "title": "Data Science Tools: Python & Orange",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Tools: Python (Matplotlib, Seaborn)"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Tools: Orange"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 2,
-          "topics": [
+          "sections": [
             {
-              "ref": "2.1.1",
-              "text": "Linear Regression"
+              "ref": "2.1",
+              "title": "Regression Models",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Linear Regression"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Nonlinear Regression"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Lasso Regression"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Ridge Regression"
+                }
+              ]
             },
             {
-              "ref": "2.1.2",
-              "text": "Nonlinear Regression"
+              "ref": "2.2",
+              "title": "Classification Algorithms",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Decision Tree Induction"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Attribute Selection Measures"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Tree Pruning"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Naive Bayesian Classification"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Rule-Based Classification"
+                },
+                {
+                  "sub_id": "6",
+                  "text": "K-Nearest Neighbour (KNN) Classifiers"
+                },
+                {
+                  "sub_id": "7",
+                  "text": "Support Vector Machines (SVM)"
+                }
+              ]
             },
             {
-              "ref": "2.1.3",
-              "text": "Lasso Regression"
-            },
-            {
-              "ref": "2.1.4",
-              "text": "Ridge Regression"
-            },
-            {
-              "ref": "2.2.1",
-              "text": "Decision Tree Induction"
-            },
-            {
-              "ref": "2.2.2",
-              "text": "Attribute Selection Measures"
-            },
-            {
-              "ref": "2.2.3",
-              "text": "Tree Pruning"
-            },
-            {
-              "ref": "2.2.4",
-              "text": "Naive Bayesian Classification"
-            },
-            {
-              "ref": "2.2.5",
-              "text": "Rule-Based Classification"
-            },
-            {
-              "ref": "2.2.6",
-              "text": "K-Nearest Neighbour (KNN) Classifiers"
-            },
-            {
-              "ref": "2.2.7",
-              "text": "Support Vector Machines (SVM)"
-            },
-            {
-              "ref": "2.3.1",
-              "text": "Supervised Model Evaluation: Accuracy & Precision"
-            },
-            {
-              "ref": "2.3.2",
-              "text": "Supervised Model Evaluation: Recall & F1-Score"
-            },
-            {
-              "ref": "2.3.3",
-              "text": "Cross-Validation Techniques"
-            },
-            {
-              "ref": "2.3.4",
-              "text": "Tools: scikit-learn & Orange"
+              "ref": "2.3",
+              "title": "Supervised Model Evaluation & Cross-Validation",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Supervised Model Evaluation: Accuracy & Precision"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Supervised Model Evaluation: Recall & F1-Score"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Cross-Validation Techniques"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Tools: scikit-learn & Orange"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 3,
-          "topics": [
+          "sections": [
             {
-              "ref": "3.1.1",
-              "text": "Partitioning Methods: K-Means"
+              "ref": "3.1",
+              "title": "Partitioning & Hierarchical Clustering",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Partitioning Methods: K-Means"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Partitioning Methods: K-Medoids"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Partitioning Methods: CLARANS"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Hierarchical Clustering: Agglomerative"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Hierarchical Clustering: Divisive"
+                }
+              ]
             },
             {
-              "ref": "3.1.2",
-              "text": "Partitioning Methods: K-Medoids"
+              "ref": "3.2",
+              "title": "Density, Grid Clustering & Dimensionality Reduction",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Density-Based Clustering (DBSCAN)"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Grid-Based Clustering (STING)"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Dimensionality Reduction: PCA"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Dimensionality Reduction: t-SNE"
+                }
+              ]
             },
             {
-              "ref": "3.1.3",
-              "text": "Partitioning Methods: CLARANS"
+              "ref": "3.3",
+              "title": "Clustering Evaluation",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Evaluation of Clustering Methods"
+                }
+              ]
             },
             {
-              "ref": "3.1.4",
-              "text": "Hierarchical Clustering: Agglomerative"
-            },
-            {
-              "ref": "3.1.5",
-              "text": "Hierarchical Clustering: Divisive"
-            },
-            {
-              "ref": "3.2.1",
-              "text": "Density-Based Clustering (DBSCAN)"
-            },
-            {
-              "ref": "3.2.2",
-              "text": "Grid-Based Clustering (STING)"
-            },
-            {
-              "ref": "3.2.3",
-              "text": "Dimensionality Reduction: PCA"
-            },
-            {
-              "ref": "3.2.4",
-              "text": "Dimensionality Reduction: t-SNE"
-            },
-            {
-              "ref": "3.3.1",
-              "text": "Evaluation of Clustering Methods"
-            },
-            {
-              "ref": "3.4.1",
-              "text": "Tools: scikit-learn for Clustering"
-            },
-            {
-              "ref": "3.4.2",
-              "text": "Tools: Orange for Clustering"
+              "ref": "3.4",
+              "title": "Unsupervised Learning Tools",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Tools: scikit-learn for Clustering"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Tools: Orange for Clustering"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 4,
-          "topics": [
+          "sections": [
             {
-              "ref": "4.1.1",
-              "text": "Ensemble Methods: Bagging"
+              "ref": "4.1",
+              "title": "Ensemble Methods & Neural Networks",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Ensemble Methods: Bagging"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Ensemble Methods: AdaBoost"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Ensemble Methods: Gradient Boosting"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Ensemble Methods: Random Forests"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Neural Networks: Perceptrons"
+                },
+                {
+                  "sub_id": "6",
+                  "text": "Neural Networks: Multi-Layer Perceptrons (MLPs)"
+                }
+              ]
             },
             {
-              "ref": "4.1.2",
-              "text": "Ensemble Methods: AdaBoost"
+              "ref": "4.2",
+              "title": "Deep Learning: CNNs & RNNs",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Convolutional Neural Networks (CNNs)"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Recurrent Neural Networks (RNNs)"
+                }
+              ]
             },
             {
-              "ref": "4.1.3",
-              "text": "Ensemble Methods: Gradient Boosting"
+              "ref": "4.3",
+              "title": "Optimization & Hyperparameter Tuning",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Optimization: Gradient Descent Variants"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Hyperparameter Tuning: Grid Search"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Hyperparameter Tuning: Random Search"
+                }
+              ]
             },
             {
-              "ref": "4.1.4",
-              "text": "Ensemble Methods: Random Forests"
-            },
-            {
-              "ref": "4.1.5",
-              "text": "Neural Networks: Perceptrons"
-            },
-            {
-              "ref": "4.1.6",
-              "text": "Neural Networks: Multi-Layer Perceptrons (MLPs)"
-            },
-            {
-              "ref": "4.2.1",
-              "text": "Convolutional Neural Networks (CNNs)"
-            },
-            {
-              "ref": "4.2.2",
-              "text": "Recurrent Neural Networks (RNNs)"
-            },
-            {
-              "ref": "4.3.1",
-              "text": "Optimization: Gradient Descent Variants"
-            },
-            {
-              "ref": "4.3.2",
-              "text": "Hyperparameter Tuning: Grid Search"
-            },
-            {
-              "ref": "4.3.3",
-              "text": "Hyperparameter Tuning: Random Search"
-            },
-            {
-              "ref": "4.4.1",
-              "text": "Tools: TensorFlow & Keras"
-            },
-            {
-              "ref": "4.4.2",
-              "text": "Tools: XGBoost"
+              "ref": "4.4",
+              "title": "Deep Learning Frameworks: TensorFlow & Keras",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Tools: TensorFlow & Keras"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Tools: XGBoost"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 5,
-          "topics": [
+          "sections": [
             {
-              "ref": "5.1.1",
-              "text": "Introduction to NLP"
+              "ref": "5.1",
+              "title": "NLP Introduction & Text Preprocessing",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Introduction to NLP"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Text Preprocessing: Tokenization"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Text Preprocessing: Stopword Removal"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Text Preprocessing: Lemmatization & Stemming"
+                }
+              ]
             },
             {
-              "ref": "5.1.2",
-              "text": "Text Preprocessing: Tokenization"
+              "ref": "5.2",
+              "title": "Text Representation, Embeddings & Analysis",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Text Representation: Bag-of-Words"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Text Representation: TF-IDF"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Word Embeddings: Word2Vec"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Word Embeddings: GloVe"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Sentiment Analysis"
+                },
+                {
+                  "sub_id": "6",
+                  "text": "Named Entity Recognition (NER)"
+                },
+                {
+                  "sub_id": "7",
+                  "text": "Topic Modeling"
+                }
+              ]
             },
             {
-              "ref": "5.1.3",
-              "text": "Text Preprocessing: Stopword Removal"
-            },
-            {
-              "ref": "5.1.4",
-              "text": "Text Preprocessing: Lemmatization & Stemming"
-            },
-            {
-              "ref": "5.2.1",
-              "text": "Text Representation: Bag-of-Words"
-            },
-            {
-              "ref": "5.2.2",
-              "text": "Text Representation: TF-IDF"
-            },
-            {
-              "ref": "5.2.3",
-              "text": "Word Embeddings: Word2Vec"
-            },
-            {
-              "ref": "5.2.4",
-              "text": "Word Embeddings: GloVe"
-            },
-            {
-              "ref": "5.2.5",
-              "text": "Sentiment Analysis"
-            },
-            {
-              "ref": "5.2.6",
-              "text": "Named Entity Recognition (NER)"
-            },
-            {
-              "ref": "5.2.7",
-              "text": "Topic Modeling"
-            },
-            {
-              "ref": "5.3.1",
-              "text": "Tools: NLTK & SpaCy"
-            },
-            {
-              "ref": "5.3.2",
-              "text": "Tools: scikit-learn & TensorFlow for NLP"
+              "ref": "5.3",
+              "title": "NLP Libraries: NLTK, SpaCy & TensorFlow",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Tools: NLTK & SpaCy"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Tools: scikit-learn & TensorFlow for NLP"
+                }
+              ]
             }
           ]
         }
@@ -570,246 +798,360 @@
       "modules": [
         {
           "module_no": 1,
-          "topics": [
+          "sections": [
             {
-              "ref": "1.1.1",
-              "text": "Basics of Digital Security"
+              "ref": "1.1",
+              "title": "Basics of Digital Security & Device Protection",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Basics of Digital Security"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Protecting Personal Computers and Devices"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Protecting Devices from Viruses and Malware"
+                }
+              ]
             },
             {
-              "ref": "1.1.2",
-              "text": "Protecting Personal Computers and Devices"
+              "ref": "1.2",
+              "title": "Identity, Authentication & Credentials",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Identity, Authentication and Authorization"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Need for Strong Credentials"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Keeping Credentials Secure"
+                }
+              ]
             },
             {
-              "ref": "1.1.3",
-              "text": "Protecting Devices from Viruses and Malware"
+              "ref": "1.3",
+              "title": "Server Security: Physical & Logical",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Protecting Servers using Physical Security"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Protecting Servers using Logical Security"
+                }
+              ]
             },
             {
-              "ref": "1.2.1",
-              "text": "Identity, Authentication and Authorization"
-            },
-            {
-              "ref": "1.2.2",
-              "text": "Need for Strong Credentials"
-            },
-            {
-              "ref": "1.2.3",
-              "text": "Keeping Credentials Secure"
-            },
-            {
-              "ref": "1.3.1",
-              "text": "Protecting Servers using Physical Security"
-            },
-            {
-              "ref": "1.3.2",
-              "text": "Protecting Servers using Logical Security"
-            },
-            {
-              "ref": "1.4.1",
-              "text": "World Wide Web (WWW) and the Internet"
-            },
-            {
-              "ref": "1.4.2",
-              "text": "HTTP Protocol"
-            },
-            {
-              "ref": "1.4.3",
-              "text": "Security of Browser to Web Server Interaction"
+              "ref": "1.4",
+              "title": "Web Security & HTTP Protocol",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "World Wide Web (WWW) and the Internet"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "HTTP Protocol"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Security of Browser to Web Server Interaction"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 2,
-          "topics": [
+          "sections": [
             {
-              "ref": "2.1.1",
-              "text": "Introduction to Cyber-Attacks"
+              "ref": "2.1",
+              "title": "Cyber Attacks & Application Security",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Introduction to Cyber-Attacks"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Application Security: Secure Design"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Application Security: Development and Testing"
+                }
+              ]
             },
             {
-              "ref": "2.1.2",
-              "text": "Application Security: Secure Design"
+              "ref": "2.2",
+              "title": "Operations Security & Threat Monitoring",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Operations Security"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Security Monitoring Systems"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Identifying and Remediating Threats"
+                }
+              ]
             },
             {
-              "ref": "2.1.3",
-              "text": "Application Security: Development and Testing"
+              "ref": "2.3",
+              "title": "Data Security Principles (CIA Triad)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Principles of Data Security: Confidentiality"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Principles of Data Security: Integrity"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Principles of Data Security: Availability"
+                }
+              ]
             },
             {
-              "ref": "2.2.1",
-              "text": "Operations Security"
-            },
-            {
-              "ref": "2.2.2",
-              "text": "Security Monitoring Systems"
-            },
-            {
-              "ref": "2.2.3",
-              "text": "Identifying and Remediating Threats"
-            },
-            {
-              "ref": "2.3.1",
-              "text": "Principles of Data Security: Confidentiality"
-            },
-            {
-              "ref": "2.3.2",
-              "text": "Principles of Data Security: Integrity"
-            },
-            {
-              "ref": "2.3.3",
-              "text": "Principles of Data Security: Availability"
-            },
-            {
-              "ref": "2.4.1",
-              "text": "Data Privacy Principles"
-            },
-            {
-              "ref": "2.4.2",
-              "text": "Data Breaches and Impact"
-            },
-            {
-              "ref": "2.4.3",
-              "text": "Preventing Attacks and Breaches with Security Controls"
+              "ref": "2.4",
+              "title": "Data Privacy & Breach Prevention",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Data Privacy Principles"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Data Breaches and Impact"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Preventing Attacks and Breaches with Security Controls"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 3,
-          "topics": [
+          "sections": [
             {
-              "ref": "3.1.1",
-              "text": "Compliance Standards"
+              "ref": "3.1",
+              "title": "Compliance Standards & Computer Ethics",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Compliance Standards"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Computer Ethics"
+                }
+              ]
             },
             {
-              "ref": "3.1.2",
-              "text": "Computer Ethics"
+              "ref": "3.2",
+              "title": "OWASP Top 10 Web Attacks",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "OWASP Top 10 Web Application Attacks"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "SQL Injection Attacks"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Cross-Site Scripting (XSS)"
+                }
+              ]
             },
             {
-              "ref": "3.2.1",
-              "text": "OWASP Top 10 Web Application Attacks"
+              "ref": "3.3",
+              "title": "System & Network Attacks",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Brute Force Attacks"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Buffer Overflow Attacks"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Man-in-the-Middle (MitM) Attacks"
+                }
+              ]
             },
             {
-              "ref": "3.2.2",
-              "text": "SQL Injection Attacks"
-            },
-            {
-              "ref": "3.2.3",
-              "text": "Cross-Site Scripting (XSS)"
-            },
-            {
-              "ref": "3.3.1",
-              "text": "Brute Force Attacks"
-            },
-            {
-              "ref": "3.3.2",
-              "text": "Buffer Overflow Attacks"
-            },
-            {
-              "ref": "3.3.3",
-              "text": "Man-in-the-Middle (MitM) Attacks"
-            },
-            {
-              "ref": "3.4.1",
-              "text": "Denial of Service (DoS & DDoS)"
+              "ref": "3.4",
+              "title": "Denial of Service Attacks",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Denial of Service (DoS & DDoS)"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 4,
-          "topics": [
+          "sections": [
             {
-              "ref": "4.1.1",
-              "text": "Hash Functions: Properties and Security"
+              "ref": "4.1",
+              "title": "Cryptographic Hash Functions",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Hash Functions: Properties and Security"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Birthday Attack"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Hashcash"
+                }
+              ]
             },
             {
-              "ref": "4.1.2",
-              "text": "Birthday Attack"
+              "ref": "4.2",
+              "title": "Message Authentication Codes (MAC)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Message Authentication Code (MAC) Algorithms"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "MAC Protocols"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "HMAC"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "CMAC"
+                }
+              ]
             },
             {
-              "ref": "4.1.3",
-              "text": "Hashcash"
-            },
-            {
-              "ref": "4.2.1",
-              "text": "Message Authentication Code (MAC) Algorithms"
-            },
-            {
-              "ref": "4.2.2",
-              "text": "MAC Protocols"
-            },
-            {
-              "ref": "4.2.3",
-              "text": "HMAC"
-            },
-            {
-              "ref": "4.2.4",
-              "text": "CMAC"
-            },
-            {
-              "ref": "4.3.1",
-              "text": "Classification of Signature Schemes"
-            },
-            {
-              "ref": "4.3.2",
-              "text": "RSA Digital Signature"
-            },
-            {
-              "ref": "4.3.3",
-              "text": "Digital Signature Standard (DSS)"
+              "ref": "4.3",
+              "title": "Digital Signature Schemes",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Classification of Signature Schemes"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "RSA Digital Signature"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Digital Signature Standard (DSS)"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 5,
-          "topics": [
+          "sections": [
             {
-              "ref": "5.1.1",
-              "text": "ElGamal and Schnorr Signature Schemes"
+              "ref": "5.1",
+              "title": "Advanced Signature Schemes & Attacks",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "ElGamal and Schnorr Signature Schemes"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "One-Time Signature Schemes"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Attacks on Digital Signatures"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Blind Signatures"
+                }
+              ]
             },
             {
-              "ref": "5.1.2",
-              "text": "One-Time Signature Schemes"
+              "ref": "5.2",
+              "title": "Firewalls, Proxies & NAT",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Packet Filter and Stateful Firewalls"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Application Aware Firewalls"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Personal Firewalls (IPTables)"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Proxies and NAT"
+                }
+              ]
             },
             {
-              "ref": "5.1.3",
-              "text": "Attacks on Digital Signatures"
+              "ref": "5.3",
+              "title": "Intrusion Detection Systems (Snort)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Intrusion Detection System (Snort)"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Signature-Based Detection"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Anomaly-Based Detection"
+                }
+              ]
             },
             {
-              "ref": "5.1.4",
-              "text": "Blind Signatures"
-            },
-            {
-              "ref": "5.2.1",
-              "text": "Packet Filter and Stateful Firewalls"
-            },
-            {
-              "ref": "5.2.2",
-              "text": "Application Aware Firewalls"
-            },
-            {
-              "ref": "5.2.3",
-              "text": "Personal Firewalls (IPTables)"
-            },
-            {
-              "ref": "5.2.4",
-              "text": "Proxies and NAT"
-            },
-            {
-              "ref": "5.3.1",
-              "text": "Intrusion Detection System (Snort)"
-            },
-            {
-              "ref": "5.3.2",
-              "text": "Signature-Based Detection"
-            },
-            {
-              "ref": "5.3.3",
-              "text": "Anomaly-Based Detection"
-            },
-            {
-              "ref": "5.4.1",
-              "text": "Honeypots and Honeynets"
-            },
-            {
-              "ref": "5.4.2",
-              "text": "Network Log Management (Syslog or SPLUNK)"
+              "ref": "5.4",
+              "title": "Honeypots & Network Log Management",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Honeypots and Honeynets"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Network Log Management (Syslog or SPLUNK)"
+                }
+              ]
             }
           ]
         }
@@ -824,262 +1166,352 @@
       "modules": [
         {
           "module_no": 1,
-          "topics": [
+          "sections": [
             {
-              "ref": "1.1.1",
-              "text": "Introduction to C# and .NET Environment"
+              "ref": "1.1",
+              "title": "Introduction to C# & .NET Environment",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Introduction to C# and .NET Environment"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Setting up Visual Studio & .NET SDK"
+                },
+                {
+                  "sub_id": "3",
+                  "text": ".NET Architecture (CLR, CTS, CLS)"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Data Types, Variables, and Constants"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Control Flow: Conditional Statements (if, else, switch)"
+                },
+                {
+                  "sub_id": "6",
+                  "text": "Control Flow: Loops (for, while, do-while)"
+                },
+                {
+                  "sub_id": "7",
+                  "text": "Operators in C#"
+                }
+              ]
             },
             {
-              "ref": "1.1.2",
-              "text": "Setting up Visual Studio & .NET SDK"
+              "ref": "1.2",
+              "title": "Exception Handling & OOP Fundamentals",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Exception Handling: try-catch-finally"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Methods and Functions"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Method Overloading"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Scope and Visibility Modifiers"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "OOP: Classes and Objects"
+                },
+                {
+                  "sub_id": "6",
+                  "text": "OOP: Constructors and Destructors"
+                },
+                {
+                  "sub_id": "7",
+                  "text": "OOP: Properties and Fields"
+                }
+              ]
             },
             {
-              "ref": "1.1.3",
-              "text": ".NET Architecture (CLR, CTS, CLS)"
-            },
-            {
-              "ref": "1.1.4",
-              "text": "Data Types, Variables, and Constants"
-            },
-            {
-              "ref": "1.1.5",
-              "text": "Control Flow: Conditional Statements (if, else, switch)"
-            },
-            {
-              "ref": "1.1.6",
-              "text": "Control Flow: Loops (for, while, do-while)"
-            },
-            {
-              "ref": "1.1.7",
-              "text": "Operators in C#"
-            },
-            {
-              "ref": "1.2.1",
-              "text": "Exception Handling: try-catch-finally"
-            },
-            {
-              "ref": "1.2.2",
-              "text": "Methods and Functions"
-            },
-            {
-              "ref": "1.2.3",
-              "text": "Method Overloading"
-            },
-            {
-              "ref": "1.2.4",
-              "text": "Scope and Visibility Modifiers"
-            },
-            {
-              "ref": "1.2.5",
-              "text": "OOP: Classes and Objects"
-            },
-            {
-              "ref": "1.2.6",
-              "text": "OOP: Constructors and Destructors"
-            },
-            {
-              "ref": "1.2.7",
-              "text": "OOP: Properties and Fields"
-            },
-            {
-              "ref": "1.3.1",
-              "text": "Inheritance and Types of Inheritance"
-            },
-            {
-              "ref": "1.3.2",
-              "text": "Method Overriding and Polymorphism"
-            },
-            {
-              "ref": "1.3.3",
-              "text": "Encapsulation"
-            },
-            {
-              "ref": "1.3.4",
-              "text": "Abstract Classes and Interfaces"
-            },
-            {
-              "ref": "1.3.5",
-              "text": "Collections and Generics"
+              "ref": "1.3",
+              "title": "Inheritance, Polymorphism & Collections",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Inheritance and Types of Inheritance"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Method Overriding and Polymorphism"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Encapsulation"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Abstract Classes and Interfaces"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Collections and Generics"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 2,
-          "topics": [
+          "sections": [
             {
-              "ref": "2.1.1",
-              "text": "ADO.NET Overview and Windows Control"
+              "ref": "2.1",
+              "title": "ADO.NET Architecture & Controls",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "ADO.NET Overview and Windows Control"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Architecture of ADO.NET"
+                }
+              ]
             },
             {
-              "ref": "2.1.2",
-              "text": "Architecture of ADO.NET"
+              "ref": "2.2",
+              "title": "Database Connection & DataSets",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Comparison of ADO vs ADO.NET"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Connected and Disconnected Database Architectures"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "ADO.NET Object Model"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Connection Class & Connection Strings"
+                },
+                {
+                  "sub_id": "5",
+                  "text": ".NET Data Providers"
+                },
+                {
+                  "sub_id": "6",
+                  "text": "DataAdapter and DataSet"
+                }
+              ]
             },
             {
-              "ref": "2.2.1",
-              "text": "Comparison of ADO vs ADO.NET"
-            },
-            {
-              "ref": "2.2.2",
-              "text": "Connected and Disconnected Database Architectures"
-            },
-            {
-              "ref": "2.2.3",
-              "text": "ADO.NET Object Model"
-            },
-            {
-              "ref": "2.2.4",
-              "text": "Connection Class & Connection Strings"
-            },
-            {
-              "ref": "2.2.5",
-              "text": ".NET Data Providers"
-            },
-            {
-              "ref": "2.2.6",
-              "text": "DataAdapter and DataSet"
-            },
-            {
-              "ref": "2.3.1",
-              "text": "DataRow, DataColumn, and DataRelation"
-            },
-            {
-              "ref": "2.3.2",
-              "text": "Command Object and DataReader"
-            },
-            {
-              "ref": "2.3.3",
-              "text": "Language Integrated Query (LINQ)"
+              "ref": "2.3",
+              "title": "Data Tables, Commands & LINQ",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "DataRow, DataColumn, and DataRelation"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Command Object and DataReader"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Language Integrated Query (LINQ)"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 3,
-          "topics": [
+          "sections": [
             {
-              "ref": "3.1.1",
-              "text": "System.IO Namespace & File Handling"
+              "ref": "3.1",
+              "title": "System.IO & File Streams",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "System.IO Namespace & File Handling"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Streams in .NET"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "TextWriter and TextReader"
+                }
+              ]
             },
             {
-              "ref": "3.1.2",
-              "text": "Streams in .NET"
+              "ref": "3.2",
+              "title": "Binary I/O & Object Serialization",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "BinaryWriter and BinaryReader"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Object Serialization Concepts"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Serialized Object Persistence and Formatters"
+                }
+              ]
             },
             {
-              "ref": "3.1.3",
-              "text": "TextWriter and TextReader"
-            },
-            {
-              "ref": "3.2.1",
-              "text": "BinaryWriter and BinaryReader"
-            },
-            {
-              "ref": "3.2.2",
-              "text": "Object Serialization Concepts"
-            },
-            {
-              "ref": "3.2.3",
-              "text": "Serialized Object Persistence and Formatters"
-            },
-            {
-              "ref": "3.3.1",
-              "text": "Binary Formatter"
-            },
-            {
-              "ref": "3.3.2",
-              "text": "SOAP Formatter"
+              "ref": "3.3",
+              "title": "Binary & SOAP Formatters",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Binary Formatter"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "SOAP Formatter"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 4,
-          "topics": [
+          "sections": [
             {
-              "ref": "4.1.1",
-              "text": "Distributed Applications Concepts"
+              "ref": "4.1",
+              "title": "Distributed Applications & DCOM",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Distributed Applications Concepts"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "COM/DCOM in Distributed Environment"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Drawbacks of DCOM"
+                }
+              ]
             },
             {
-              "ref": "4.1.2",
-              "text": "COM/DCOM in Distributed Environment"
+              "ref": "4.2",
+              "title": ".NET Remoting Architecture",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": ".NET Remoting Distributed Environment"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Advantages & Disadvantages of Remoting"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Implementing a Simple Remoting Client and Server"
+                }
+              ]
             },
             {
-              "ref": "4.1.3",
-              "text": "Drawbacks of DCOM"
-            },
-            {
-              "ref": "4.2.1",
-              "text": ".NET Remoting Distributed Environment"
-            },
-            {
-              "ref": "4.2.2",
-              "text": "Advantages & Disadvantages of Remoting"
-            },
-            {
-              "ref": "4.2.3",
-              "text": "Implementing a Simple Remoting Client and Server"
-            },
-            {
-              "ref": "4.3.1",
-              "text": "Network Programming: Socket Programming"
-            },
-            {
-              "ref": "4.3.2",
-              "text": "Network Programming: TCP/IP"
-            },
-            {
-              "ref": "4.3.3",
-              "text": "Network Programming: UDP"
+              "ref": "4.3",
+              "title": "Socket & Network Programming",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Network Programming: Socket Programming"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Network Programming: TCP/IP"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Network Programming: UDP"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 5,
-          "topics": [
+          "sections": [
             {
-              "ref": "5.1.1",
-              "text": "Introduction to Windows Forms"
+              "ref": "5.1",
+              "title": "Windows Forms Architecture",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Introduction to Windows Forms"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Basics of Windows Forms and Project Setup"
+                }
+              ]
             },
             {
-              "ref": "5.1.2",
-              "text": "Basics of Windows Forms and Project Setup"
+              "ref": "5.2",
+              "title": "GUI Controls & Event Handling",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Creating a Simple GUI Application"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Controls: TextBox, Button, Label"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Controls: CheckBox, RadioButtons"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Controls: ComboBox, GroupBox"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Event Handling in Windows Forms"
+                }
+              ]
             },
             {
-              "ref": "5.2.1",
-              "text": "Creating a Simple GUI Application"
-            },
-            {
-              "ref": "5.2.2",
-              "text": "Controls: TextBox, Button, Label"
-            },
-            {
-              "ref": "5.2.3",
-              "text": "Controls: CheckBox, RadioButtons"
-            },
-            {
-              "ref": "5.2.4",
-              "text": "Controls: ComboBox, GroupBox"
-            },
-            {
-              "ref": "5.2.5",
-              "text": "Event Handling in Windows Forms"
-            },
-            {
-              "ref": "5.3.1",
-              "text": "Creating Menus and Toolbars"
-            },
-            {
-              "ref": "5.3.2",
-              "text": "Using Dialog Boxes"
-            },
-            {
-              "ref": "5.3.3",
-              "text": "Managing Multiple Forms (MDI)"
-            },
-            {
-              "ref": "5.3.4",
-              "text": "Forms Database Programming"
-            },
-            {
-              "ref": "5.3.5",
-              "text": "Binding Controls to Data Sources"
+              "ref": "5.3",
+              "title": "Menus, Dialogs & Data Binding",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Creating Menus and Toolbars"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Using Dialog Boxes"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Managing Multiple Forms (MDI)"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Forms Database Programming"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Binding Controls to Data Sources"
+                }
+              ]
             }
           ]
         }
@@ -1094,182 +1526,302 @@
       "modules": [
         {
           "module_no": 1,
-          "topics": [
+          "sections": [
             {
-              "ref": "1.1.1",
-              "text": "Overview of IoT Concepts"
+              "ref": "1.1",
+              "title": "IoT Concepts & Applications",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Overview of IoT Concepts"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Real-World IoT Applications"
+                }
+              ]
             },
             {
-              "ref": "1.1.2",
-              "text": "Real-World IoT Applications"
+              "ref": "1.2",
+              "title": "Evolution & History of IoT",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Evolution and History of IoT"
+                }
+              ]
             },
             {
-              "ref": "1.2.1",
-              "text": "Evolution and History of IoT"
+              "ref": "1.3",
+              "title": "IoT Components & Architectures",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Key Components: Devices and Hardware"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Key Components: Connectivity and Platforms"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "IoT Architectures"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "IoT Communication Protocols Overview"
+                }
+              ]
             },
             {
-              "ref": "1.3.1",
-              "text": "Key Components: Devices and Hardware"
-            },
-            {
-              "ref": "1.3.2",
-              "text": "Key Components: Connectivity and Platforms"
-            },
-            {
-              "ref": "1.3.3",
-              "text": "IoT Architectures"
-            },
-            {
-              "ref": "1.3.4",
-              "text": "IoT Communication Protocols Overview"
-            },
-            {
-              "ref": "1.4.1",
-              "text": "Privacy Considerations in IoT"
-            },
-            {
-              "ref": "1.4.2",
-              "text": "Security Considerations in IoT"
+              "ref": "1.4",
+              "title": "Privacy & Security in IoT",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Privacy Considerations in IoT"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Security Considerations in IoT"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 2,
-          "topics": [
+          "sections": [
             {
-              "ref": "2.1.1",
-              "text": "IoT Hardware Components: Sensors"
+              "ref": "2.1",
+              "title": "IoT Hardware Components",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "IoT Hardware Components: Sensors"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "IoT Hardware Components: Actuators"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "IoT Hardware Components: Microcontrollers"
+                }
+              ]
             },
             {
-              "ref": "2.1.2",
-              "text": "IoT Hardware Components: Actuators"
+              "ref": "2.2",
+              "title": "Sensor Types & Interfacing",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Temperature and Humidity Sensors"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Motion and Proximity Sensors"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Other Sensor Types (Gas, Light, Ultrasonic)"
+                }
+              ]
             },
             {
-              "ref": "2.1.3",
-              "text": "IoT Hardware Components: Microcontrollers"
+              "ref": "2.3",
+              "title": "Arduino & Raspberry Pi Prototyping",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Basics of Arduino for IoT Projects"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Basics of Raspberry Pi for IoT Projects"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Connecting Sensors and Actuators to Microcontrollers"
+                }
+              ]
             },
             {
-              "ref": "2.2.1",
-              "text": "Temperature and Humidity Sensors"
-            },
-            {
-              "ref": "2.2.2",
-              "text": "Motion and Proximity Sensors"
-            },
-            {
-              "ref": "2.2.3",
-              "text": "Other Sensor Types (Gas, Light, Ultrasonic)"
-            },
-            {
-              "ref": "2.3.1",
-              "text": "Basics of Arduino for IoT Projects"
-            },
-            {
-              "ref": "2.3.2",
-              "text": "Basics of Raspberry Pi for IoT Projects"
-            },
-            {
-              "ref": "2.3.3",
-              "text": "Connecting Sensors and Actuators to Microcontrollers"
-            },
-            {
-              "ref": "2.4.1",
-              "text": "Hands-on Exercises on Basic Sensor Interfacing"
+              "ref": "2.4",
+              "title": "Sensor Interfacing Exercises",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Hands-on Exercises on Basic Sensor Interfacing"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 3,
-          "topics": [
+          "sections": [
             {
-              "ref": "3.1.1",
-              "text": "Basics of MQTT Protocol"
+              "ref": "3.1",
+              "title": "IoT Protocols (MQTT, CoAP, HTTP)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Basics of MQTT Protocol"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Basics of CoAP Protocol"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Basics of HTTP Protocol for IoT"
+                }
+              ]
             },
             {
-              "ref": "3.1.2",
-              "text": "Basics of CoAP Protocol"
+              "ref": "3.2",
+              "title": "Wireless Technologies (Wi-Fi, BLE, Zigbee)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Wi-Fi Technology for IoT"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Bluetooth and BLE for IoT"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Zigbee and Low-Power Mesh Networks"
+                }
+              ]
             },
             {
-              "ref": "3.1.3",
-              "text": "Basics of HTTP Protocol for IoT"
+              "ref": "3.3",
+              "title": "IoT Networks & Cloud Platforms",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Setting up IoT Networks"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Introduction to IoT Cloud Platforms"
+                }
+              ]
             },
             {
-              "ref": "3.2.1",
-              "text": "Wi-Fi Technology for IoT"
-            },
-            {
-              "ref": "3.2.2",
-              "text": "Bluetooth and BLE for IoT"
-            },
-            {
-              "ref": "3.2.3",
-              "text": "Zigbee and Low-Power Mesh Networks"
-            },
-            {
-              "ref": "3.3.1",
-              "text": "Setting up IoT Networks"
-            },
-            {
-              "ref": "3.3.2",
-              "text": "Introduction to IoT Cloud Platforms"
-            },
-            {
-              "ref": "3.4.1",
-              "text": "Hands-on: Sending and Receiving Data over IoT Networks"
+              "ref": "3.4",
+              "title": "Network Data Transmission Exercises",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Hands-on: Sending and Receiving Data over IoT Networks"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 4,
-          "topics": [
+          "sections": [
             {
-              "ref": "4.1.1",
-              "text": "Introduction to Data Analytics in IoT"
+              "ref": "4.1",
+              "title": "IoT Data Analytics & Visualization",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Introduction to Data Analytics in IoT"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Basics of Data Visualization Tools for IoT"
+                }
+              ]
             },
             {
-              "ref": "4.1.2",
-              "text": "Basics of Data Visualization Tools for IoT"
+              "ref": "4.2",
+              "title": "Sensor Data Analysis",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Analysing and Interpreting IoT Sensor Data"
+                }
+              ]
             },
             {
-              "ref": "4.2.1",
-              "text": "Analysing and Interpreting IoT Sensor Data"
+              "ref": "4.3",
+              "title": "Machine Learning for IoT",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Machine Learning for IoT Applications"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Predictive Maintenance and Anomaly Detection"
+                }
+              ]
             },
             {
-              "ref": "4.3.1",
-              "text": "Machine Learning for IoT Applications"
-            },
-            {
-              "ref": "4.3.2",
-              "text": "Predictive Maintenance and Anomaly Detection"
-            },
-            {
-              "ref": "4.4.1",
-              "text": "Hands-on: Basic Data Analytics using IoT Data"
+              "ref": "4.4",
+              "title": "Hands-on Data Analytics",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Hands-on: Basic Data Analytics using IoT Data"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 5,
-          "topics": [
+          "sections": [
             {
-              "ref": "5.1.1",
-              "text": "Overview of IoT Project Lifecycle"
+              "ref": "5.1",
+              "title": "IoT Project Lifecycle",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Overview of IoT Project Lifecycle"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Planning and Designing an IoT Project"
+                }
+              ]
             },
             {
-              "ref": "5.1.2",
-              "text": "Planning and Designing an IoT Project"
+              "ref": "5.2",
+              "title": "Implementation & Coding for IoT",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Implementation and Coding for IoT Applications"
+                }
+              ]
             },
             {
-              "ref": "5.2.1",
-              "text": "Implementation and Coding for IoT Applications"
+              "ref": "5.3",
+              "title": "Testing & Troubleshooting IoT Projects",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Testing and Troubleshooting IoT Projects"
+                }
+              ]
             },
             {
-              "ref": "5.3.1",
-              "text": "Testing and Troubleshooting IoT Projects"
-            },
-            {
-              "ref": "5.4.1",
-              "text": "Final Project Presentation and Evaluation"
+              "ref": "5.4",
+              "title": "Final Project Evaluation",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Final Project Presentation and Evaluation"
+                }
+              ]
             }
           ]
         }
@@ -1284,238 +1836,358 @@
       "modules": [
         {
           "module_no": 1,
-          "topics": [
+          "sections": [
             {
-              "ref": "1.1.1",
-              "text": "Introduction to Python: Using the Python Interpreter"
+              "ref": "1.1",
+              "title": "Python Interpreter & Basics",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Introduction to Python: Using the Python Interpreter"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Overview of Programming in Python"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Expressions and Variables"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "String Operations"
+                }
+              ]
             },
             {
-              "ref": "1.1.2",
-              "text": "Overview of Programming in Python"
+              "ref": "1.2",
+              "title": "Python Data Structures",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Python Data Structures: Lists & Tuples"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Python Data Structures: Sets"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Python Data Structures: Dictionaries"
+                }
+              ]
             },
             {
-              "ref": "1.1.3",
-              "text": "Expressions and Variables"
+              "ref": "1.3",
+              "title": "Control Flow & Loops",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Programming Fundamentals: Conditions and Branching"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Programming Fundamentals: Loops (for, while)"
+                }
+              ]
             },
             {
-              "ref": "1.1.4",
-              "text": "String Operations"
-            },
-            {
-              "ref": "1.2.1",
-              "text": "Python Data Structures: Lists & Tuples"
-            },
-            {
-              "ref": "1.2.2",
-              "text": "Python Data Structures: Sets"
-            },
-            {
-              "ref": "1.2.3",
-              "text": "Python Data Structures: Dictionaries"
-            },
-            {
-              "ref": "1.3.1",
-              "text": "Programming Fundamentals: Conditions and Branching"
-            },
-            {
-              "ref": "1.3.2",
-              "text": "Programming Fundamentals: Loops (for, while)"
-            },
-            {
-              "ref": "1.4.1",
-              "text": "Functions: Formal Arguments"
-            },
-            {
-              "ref": "1.4.2",
-              "text": "Functions: Variable-Length Arguments (*args, **kwargs)"
+              "ref": "1.4",
+              "title": "Functions & Arguments",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Functions: Formal Arguments"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Functions: Variable-Length Arguments (*args, **kwargs)"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 2,
-          "topics": [
+          "sections": [
             {
-              "ref": "2.1.1",
-              "text": "Classes, Files and Modules Overview"
+              "ref": "2.1",
+              "title": "Classes, Objects & Attributes",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Classes, Files and Modules Overview"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Introduction to Classes and Objects"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Class Attributes vs Instance Attributes"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Binding and Method Invocation"
+                }
+              ]
             },
             {
-              "ref": "2.1.2",
-              "text": "Introduction to Classes and Objects"
+              "ref": "2.2",
+              "title": "Inheritance & Polymorphism",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Inheritance in Python"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Polymorphism in Python"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Built-in Functions for Classes and Instances"
+                }
+              ]
             },
             {
-              "ref": "2.1.3",
-              "text": "Class Attributes vs Instance Attributes"
+              "ref": "2.3",
+              "title": "File I/O Operations",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Files and Input/Output Operations"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Reading and Writing Files"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "File Object Methods using Standard Library"
+                }
+              ]
             },
             {
-              "ref": "2.1.4",
-              "text": "Binding and Method Invocation"
-            },
-            {
-              "ref": "2.2.1",
-              "text": "Inheritance in Python"
-            },
-            {
-              "ref": "2.2.2",
-              "text": "Polymorphism in Python"
-            },
-            {
-              "ref": "2.2.3",
-              "text": "Built-in Functions for Classes and Instances"
-            },
-            {
-              "ref": "2.3.1",
-              "text": "Files and Input/Output Operations"
-            },
-            {
-              "ref": "2.3.2",
-              "text": "Reading and Writing Files"
-            },
-            {
-              "ref": "2.3.3",
-              "text": "File Object Methods using Standard Library"
-            },
-            {
-              "ref": "2.4.1",
-              "text": "Dates and Times Handling"
-            },
-            {
-              "ref": "2.4.2",
-              "text": "Exceptions: Detecting and Handling (try-except-finally)"
+              "ref": "2.4",
+              "title": "Dates, Times & Exceptions",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Dates and Times Handling"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Exceptions: Detecting and Handling (try-except-finally)"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 3,
-          "topics": [
+          "sections": [
             {
-              "ref": "3.1.1",
-              "text": "Database Programming: Python DB-API Overview"
+              "ref": "3.1",
+              "title": "Python Database API (DB-API)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Database Programming: Python DB-API Overview"
+                }
+              ]
             },
             {
-              "ref": "3.2.1",
-              "text": "Connection and Cursor Objects"
+              "ref": "3.2",
+              "title": "Connection & Cursor Objects",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Connection and Cursor Objects"
+                }
+              ]
             },
             {
-              "ref": "3.3.1",
-              "text": "Type Objects and Constructors"
+              "ref": "3.3",
+              "title": "Type Objects & Database Adapters",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Type Objects and Constructors"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Python Database Adapters (SQLite, MySQL, PostgreSQL)"
+                }
+              ]
             },
             {
-              "ref": "3.3.2",
-              "text": "Python Database Adapters (SQLite, MySQL, PostgreSQL)"
-            },
-            {
-              "ref": "3.4.1",
-              "text": "Creating Simple Web Clients in Python"
-            },
-            {
-              "ref": "3.4.2",
-              "text": "Introduction to CGI Programming"
-            },
-            {
-              "ref": "3.4.3",
-              "text": "CGI Module and Building CGI Applications"
+              "ref": "3.4",
+              "title": "Web Clients & CGI Programming",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Creating Simple Web Clients in Python"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Introduction to CGI Programming"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "CGI Module and Building CGI Applications"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 4,
-          "topics": [
+          "sections": [
             {
-              "ref": "4.1.1",
-              "text": "Introduction to Data Science using Python"
+              "ref": "4.1",
+              "title": "Data Science Libraries Overview",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Introduction to Data Science using Python"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "NumPy Library for Numerical Computing"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Pandas Library for Data Analysis"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Scikit-Learn Library Overview"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Data Visualization with Matplotlib & Seaborn"
+                }
+              ]
             },
             {
-              "ref": "4.1.2",
-              "text": "NumPy Library for Numerical Computing"
+              "ref": "4.2",
+              "title": "Importing & Exporting Datasets",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Importing and Exporting Datasets in Python"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Basic Insights from Datasets (head, info, describe)"
+                }
+              ]
             },
             {
-              "ref": "4.1.3",
-              "text": "Pandas Library for Data Analysis"
+              "ref": "4.3",
+              "title": "Data Cleaning & Missing Values",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Data Cleansing: Identifying Missing Values"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Data Cleansing: Handling Missing Values (Imputation & Dropping)"
+                }
+              ]
             },
             {
-              "ref": "4.1.4",
-              "text": "Scikit-Learn Library Overview"
-            },
-            {
-              "ref": "4.1.5",
-              "text": "Data Visualization with Matplotlib & Seaborn"
-            },
-            {
-              "ref": "4.2.1",
-              "text": "Importing and Exporting Datasets in Python"
-            },
-            {
-              "ref": "4.2.2",
-              "text": "Basic Insights from Datasets (head, info, describe)"
-            },
-            {
-              "ref": "4.3.1",
-              "text": "Data Cleansing: Identifying Missing Values"
-            },
-            {
-              "ref": "4.3.2",
-              "text": "Data Cleansing: Handling Missing Values (Imputation & Dropping)"
-            },
-            {
-              "ref": "4.4.1",
-              "text": "Summarizing Data: Descriptive Statistics"
-            },
-            {
-              "ref": "4.4.2",
-              "text": "Basics of Grouping (groupby)"
-            },
-            {
-              "ref": "4.4.3",
-              "text": "ANOVA (Analysis of Variance)"
-            },
-            {
-              "ref": "4.4.4",
-              "text": "Correlation Analysis"
+              "ref": "4.4",
+              "title": "Statistical Summaries & Correlation",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Summarizing Data: Descriptive Statistics"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Basics of Grouping (groupby)"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "ANOVA (Analysis of Variance)"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Correlation Analysis"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 5,
-          "topics": [
+          "sections": [
             {
-              "ref": "5.1.1",
-              "text": "Model Development and Evaluation Overview"
+              "ref": "5.1",
+              "title": "Regression Models (SLR & MLR)",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Model Development and Evaluation Overview"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Simple Linear Regression (SLR)"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Multiple Linear Regression (MLR)"
+                }
+              ]
             },
             {
-              "ref": "5.1.2",
-              "text": "Simple Linear Regression (SLR)"
+              "ref": "5.2",
+              "title": "Classification Models",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Logistic Regression"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Decision Trees for Analytics"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Random Forest Models"
+                }
+              ]
             },
             {
-              "ref": "5.1.3",
-              "text": "Multiple Linear Regression (MLR)"
+              "ref": "5.3",
+              "title": "Clustering & Association Rules",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Clustering Techniques: K-Means Clustering"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Apriori Association Rule Algorithm"
+                }
+              ]
             },
             {
-              "ref": "5.2.1",
-              "text": "Logistic Regression"
-            },
-            {
-              "ref": "5.2.2",
-              "text": "Decision Trees for Analytics"
-            },
-            {
-              "ref": "5.2.3",
-              "text": "Random Forest Models"
-            },
-            {
-              "ref": "5.3.1",
-              "text": "Clustering Techniques: K-Means Clustering"
-            },
-            {
-              "ref": "5.3.2",
-              "text": "Apriori Association Rule Algorithm"
-            },
-            {
-              "ref": "5.4.1",
-              "text": "Model Evaluation: Over-fitting and Underfitting"
-            },
-            {
-              "ref": "5.4.2",
-              "text": "Model Performance Metrics (R-squared, MSE, Confusion Matrix)"
+              "ref": "5.4",
+              "title": "Model Evaluation & Metrics",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Model Evaluation: Over-fitting and Underfitting"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Model Performance Metrics (R-squared, MSE, Confusion Matrix)"
+                }
+              ]
             }
           ]
         }
@@ -1530,262 +2202,382 @@
       "modules": [
         {
           "module_no": 1,
-          "topics": [
+          "sections": [
             {
-              "ref": "1.1.1",
-              "text": "Mobile Computing & Development Introduction"
+              "ref": "1.1",
+              "title": "Mobile Computing Architecture",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Mobile Computing & Development Introduction"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Mobile System Architecture"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Mobile Development Challenges"
+                }
+              ]
             },
             {
-              "ref": "1.1.2",
-              "text": "Mobile System Architecture"
+              "ref": "1.2",
+              "title": "Android Platform & SDK Tools",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "The Android Platform & Android SDK Features"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Introduction to Android Development Framework"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Android Development Tools (Android Studio, ADB)"
+                }
+              ]
             },
             {
-              "ref": "1.1.3",
-              "text": "Mobile Development Challenges"
+              "ref": "1.3",
+              "title": "Application Lifecycle & Architecture",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Android Application Life Cycle"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Core Components: Activity"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Core Components: Service"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Core Components: Intent"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "MVC Architecture and User Interfaces"
+                }
+              ]
             },
             {
-              "ref": "1.2.1",
-              "text": "The Android Platform & Android SDK Features"
-            },
-            {
-              "ref": "1.2.2",
-              "text": "Introduction to Android Development Framework"
-            },
-            {
-              "ref": "1.2.3",
-              "text": "Android Development Tools (Android Studio, ADB)"
-            },
-            {
-              "ref": "1.3.1",
-              "text": "Android Application Life Cycle"
-            },
-            {
-              "ref": "1.3.2",
-              "text": "Core Components: Activity"
-            },
-            {
-              "ref": "1.3.3",
-              "text": "Core Components: Service"
-            },
-            {
-              "ref": "1.3.4",
-              "text": "Core Components: Intent"
-            },
-            {
-              "ref": "1.3.5",
-              "text": "MVC Architecture and User Interfaces"
-            },
-            {
-              "ref": "1.4.1",
-              "text": "Application Structure & AndroidManifest.xml"
-            },
-            {
-              "ref": "1.4.2",
-              "text": "uses-permission & uses-sdk Tags"
-            },
-            {
-              "ref": "1.4.3",
-              "text": "Resources & R.java"
-            },
-            {
-              "ref": "1.4.4",
-              "text": "Assets, Layouts & Drawable Resources"
-            },
-            {
-              "ref": "1.4.5",
-              "text": "Activities & Activity Lifecycle Callbacks"
+              "ref": "1.4",
+              "title": "Application Structure & Manifest",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Application Structure & AndroidManifest.xml"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "uses-permission & uses-sdk Tags"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Resources & R.java"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Assets, Layouts & Drawable Resources"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Activities & Activity Lifecycle Callbacks"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 2,
-          "topics": [
+          "sections": [
             {
-              "ref": "2.1.1",
-              "text": "Android GUI: Linear Layout"
+              "ref": "2.1",
+              "title": "Layouts & UI Widgets",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Android GUI: Linear Layout"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Android GUI: Relative Layout & Constraint Layout"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Android GUI: Table Layout"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Android GUI: Grid View"
+                },
+                {
+                  "sub_id": "5",
+                  "text": "Android GUI: Tab Layout"
+                },
+                {
+                  "sub_id": "6",
+                  "text": "Android GUI: List View"
+                },
+                {
+                  "sub_id": "7",
+                  "text": "Android GUI: Custom List View Element"
+                }
+              ]
             },
             {
-              "ref": "2.1.2",
-              "text": "Android GUI: Relative Layout & Constraint Layout"
+              "ref": "2.2",
+              "title": "Fragments & Lifecycle",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Fragments Lifecycle & Fragment Manager"
+                }
+              ]
             },
             {
-              "ref": "2.1.3",
-              "text": "Android GUI: Table Layout"
+              "ref": "2.3",
+              "title": "Popup & Context Menus",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Popup Menus: Options Menu"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Popup Menus: Context Menu"
+                }
+              ]
             },
             {
-              "ref": "2.1.4",
-              "text": "Android GUI: Grid View"
-            },
-            {
-              "ref": "2.1.5",
-              "text": "Android GUI: Tab Layout"
-            },
-            {
-              "ref": "2.1.6",
-              "text": "Android GUI: List View"
-            },
-            {
-              "ref": "2.1.7",
-              "text": "Android GUI: Custom List View Element"
-            },
-            {
-              "ref": "2.2.1",
-              "text": "Fragments Lifecycle & Fragment Manager"
-            },
-            {
-              "ref": "2.3.1",
-              "text": "Popup Menus: Options Menu"
-            },
-            {
-              "ref": "2.3.2",
-              "text": "Popup Menus: Context Menu"
-            },
-            {
-              "ref": "2.4.1",
-              "text": "Sub Menus"
-            },
-            {
-              "ref": "2.4.2",
-              "text": "Menu from XML"
-            },
-            {
-              "ref": "2.4.3",
-              "text": "Menu via Code"
+              "ref": "2.4",
+              "title": "Sub Menus & XML Menus",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Sub Menus"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Menu from XML"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Menu via Code"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 3,
-          "topics": [
+          "sections": [
             {
-              "ref": "3.1.1",
-              "text": "Explicit Intents"
+              "ref": "3.1",
+              "title": "Intents & Broadcast Receivers",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Explicit Intents"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Implicit Intents"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Intents and Broadcast Receivers"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Intent Filters"
+                }
+              ]
             },
             {
-              "ref": "3.1.2",
-              "text": "Implicit Intents"
+              "ref": "3.2",
+              "title": "Adapters & List Views",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Adapters: ArrayAdapters"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Adapters: BaseAdapters"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Widgets: ListView and ListActivity"
+                }
+              ]
             },
             {
-              "ref": "3.1.3",
-              "text": "Intents and Broadcast Receivers"
+              "ref": "3.3",
+              "title": "Notifications & Channels",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Push Notifications & Notification Channels"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Broadcast Receivers Implementation"
+                }
+              ]
             },
             {
-              "ref": "3.1.4",
-              "text": "Intent Filters"
-            },
-            {
-              "ref": "3.2.1",
-              "text": "Adapters: ArrayAdapters"
-            },
-            {
-              "ref": "3.2.2",
-              "text": "Adapters: BaseAdapters"
-            },
-            {
-              "ref": "3.2.3",
-              "text": "Widgets: ListView and ListActivity"
-            },
-            {
-              "ref": "3.3.1",
-              "text": "Push Notifications & Notification Channels"
-            },
-            {
-              "ref": "3.3.2",
-              "text": "Broadcast Receivers Implementation"
-            },
-            {
-              "ref": "3.4.1",
-              "text": "Services: Started Services"
-            },
-            {
-              "ref": "3.4.2",
-              "text": "Services: Bound Services"
-            },
-            {
-              "ref": "3.4.3",
-              "text": "IntentService and Background Processing"
+              "ref": "3.4",
+              "title": "Android Services",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Services: Started Services"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Services: Bound Services"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "IntentService and Background Processing"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 4,
-          "topics": [
+          "sections": [
             {
-              "ref": "4.1.1",
-              "text": "Introduction to Content Providers"
+              "ref": "4.1",
+              "title": "Content Providers Architecture",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Introduction to Content Providers"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Types of Content Providers & Content URIs"
+                }
+              ]
             },
             {
-              "ref": "4.1.2",
-              "text": "Types of Content Providers & Content URIs"
+              "ref": "4.2",
+              "title": "SQLite Databases in Android",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "SQLite Databases: Basics of SQLite DB"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "SQLite Data Types & SQLiteOpenHelper"
+                }
+              ]
             },
             {
-              "ref": "4.2.1",
-              "text": "SQLite Databases: Basics of SQLite DB"
+              "ref": "4.3",
+              "title": "SQLite CRUD Operations",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "SQLite Queries (SELECT)"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Adding Contents (INSERT) in SQLite"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Updating Contents (UPDATE) in SQLite"
+                },
+                {
+                  "sub_id": "4",
+                  "text": "Deleting Contents (DELETE) in SQLite"
+                }
+              ]
             },
             {
-              "ref": "4.2.2",
-              "text": "SQLite Data Types & SQLiteOpenHelper"
-            },
-            {
-              "ref": "4.3.1",
-              "text": "SQLite Queries (SELECT)"
-            },
-            {
-              "ref": "4.3.2",
-              "text": "Adding Contents (INSERT) in SQLite"
-            },
-            {
-              "ref": "4.3.3",
-              "text": "Updating Contents (UPDATE) in SQLite"
-            },
-            {
-              "ref": "4.3.4",
-              "text": "Deleting Contents (DELETE) in SQLite"
-            },
-            {
-              "ref": "4.4.1",
-              "text": "Android Webserver Communication with External Database"
+              "ref": "4.4",
+              "title": "External Web Services Communication",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Android Webserver Communication with External Database"
+                }
+              ]
             }
           ]
         },
         {
           "module_no": 5,
-          "topics": [
+          "sections": [
             {
-              "ref": "5.1.1",
-              "text": "JSON Parsing in Android (JSONObject, JSONArray, Gson)"
+              "ref": "5.1",
+              "title": "JSON Parsing",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "JSON Parsing in Android (JSONObject, JSONArray, Gson)"
+                }
+              ]
             },
             {
-              "ref": "5.2.1",
-              "text": "Google Maps API Integration in Android"
+              "ref": "5.2",
+              "title": "Maps, GPS & Location Services",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Google Maps API Integration in Android"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "GPS and Location-Based Services (FusedLocationProvider)"
+                }
+              ]
             },
             {
-              "ref": "5.2.2",
-              "text": "GPS and Location-Based Services (FusedLocationProvider)"
+              "ref": "5.3",
+              "title": "Telephony & Network Services",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Accessing Phone Services: Phone Calls"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Accessing Phone Services: SMS and MMS"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Network Connectivity Services (ConnectivityManager)"
+                }
+              ]
             },
             {
-              "ref": "5.3.1",
-              "text": "Accessing Phone Services: Phone Calls"
-            },
-            {
-              "ref": "5.3.2",
-              "text": "Accessing Phone Services: SMS and MMS"
-            },
-            {
-              "ref": "5.3.3",
-              "text": "Network Connectivity Services (ConnectivityManager)"
-            },
-            {
-              "ref": "5.4.1",
-              "text": "Hardware Sensors: Sensor and SensorManager"
-            },
-            {
-              "ref": "5.4.2",
-              "text": "Monitoring Device Movement and Orientation (Accelerometer, Gyroscope)"
-            },
-            {
-              "ref": "5.4.3",
-              "text": "Environmental Sensors (Light, Pressure, Temperature)"
+              "ref": "5.4",
+              "title": "Hardware Sensors Management",
+              "topics": [
+                {
+                  "sub_id": "1",
+                  "text": "Hardware Sensors: Sensor and SensorManager"
+                },
+                {
+                  "sub_id": "2",
+                  "text": "Monitoring Device Movement and Orientation (Accelerometer, Gyroscope)"
+                },
+                {
+                  "sub_id": "3",
+                  "text": "Environmental Sensors (Light, Pressure, Temperature)"
+                }
+              ]
             }
           ]
         }
