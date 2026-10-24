@@ -31,6 +31,17 @@ const provider = new GoogleAuthProvider();
 
 const STORAGE_KEY = "sem3_study_tracker_topics";
 
+// Valid topic IDs injected from server to purge stale/obsolete keys from previous schema versions
+const validTopicIdsElem = document.getElementById("valid-topic-ids");
+let validTopicIds = null;
+try {
+  if (validTopicIdsElem && validTopicIdsElem.textContent) {
+    validTopicIds = new Set(JSON.parse(validTopicIdsElem.textContent));
+  }
+} catch (e) {
+  console.warn("Could not parse valid topic IDs:", e);
+}
+
 // In-memory / local progress map: { [topicId]: true/false }
 let progressState = {};
 
@@ -42,6 +53,24 @@ try {
 } catch (e) {
   console.warn("Could not load from localStorage:", e);
 }
+
+// Purge obsolete/orphaned keys from previous versions immediately
+function purgeObsoleteTopics() {
+  if (!validTopicIds || validTopicIds.size === 0) return;
+  let changed = false;
+  for (const tId of Object.keys(progressState)) {
+    if (!validTopicIds.has(tId)) {
+      delete progressState[tId];
+      changed = true;
+    }
+  }
+  if (changed) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(progressState));
+    } catch (_) {}
+  }
+}
+purgeObsoleteTopics();
 
 // Active Firestore unsubscribe callback
 let unsubscribeFirestore = null;
@@ -60,16 +89,17 @@ function updateDOM() {
       const code = card.dataset.subjectCode;
       const total = parseInt(card.dataset.subjectTotal, 10) || 0;
 
-      // Count topics for this subject that are true
+      // Count topics for this subject that are true and exist in current syllabus
       let done = 0;
       for (const [tId, isDone] of Object.entries(progressState)) {
-        if (isDone && tId.startsWith(code + "-")) {
+        if (isDone && tId.startsWith(code + "-") && (!validTopicIds || validTopicIds.has(tId))) {
           done++;
         }
       }
+      done = Math.min(done, total);
       overallDone += done;
 
-      const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+      const percent = total > 0 ? Math.min(100, Math.round((done / total) * 100)) : 0;
 
       const countElem = document.getElementById(`card-count-${code}`);
       const pctElem = document.getElementById(`card-pct-${code}`);
@@ -80,7 +110,8 @@ function updateDOM() {
       if (barElem) barElem.style.width = `${percent}%`;
     });
 
-    const overallPct = Math.round((overallDone / totalSyllabusTopics) * 100);
+    overallDone = Math.min(overallDone, totalSyllabusTopics);
+    const overallPct = totalSyllabusTopics > 0 ? Math.min(100, Math.round((overallDone / totalSyllabusTopics) * 100)) : 0;
     const overallPctElem = document.getElementById("overall-pct");
     const overallCountElem = document.getElementById("overall-count");
     const overallBarElem = document.getElementById("overall-bar-fill");
@@ -377,10 +408,25 @@ document.addEventListener("DOMContentLoaded", () => {
       unsubscribeFirestore = onSnapshot(userDocRef, async (docSnap) => {
         if (docSnap.exists()) {
           const remoteTopics = docSnap.data().topics || {};
+          let hadObsolete = false;
+          const cleanRemote = {};
+          for (const [k, v] of Object.entries(remoteTopics)) {
+            if (!validTopicIds || validTopicIds.has(k)) {
+              cleanRemote[k] = v;
+            } else {
+              hadObsolete = true;
+            }
+          }
           // Merge remote topics with local
-          progressState = { ...progressState, ...remoteTopics };
+          progressState = { ...progressState, ...cleanRemote };
+          purgeObsoleteTopics();
           localStorage.setItem(STORAGE_KEY, JSON.stringify(progressState));
           updateDOM();
+
+          // If Firestore contained stale keys from older versions, overwrite with clean state
+          if (hadObsolete) {
+            setDoc(userDocRef, { topics: progressState, updatedAt: new Date().toISOString() }, { merge: false }).catch(() => {});
+          }
         } else {
           // Document does not exist yet for new user; seed with current local progress
           if (Object.keys(progressState).length > 0) {

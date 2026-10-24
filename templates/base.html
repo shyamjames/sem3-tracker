@@ -69,9 +69,10 @@
 
   <!-- Footer -->
   <footer class="app-footer">
-    <p>MCA Semester III Revision Tracker &bull; 7 Subjects &bull; 133 Syllabus Topics</p>
+    <p>MCA Semester III Revision Tracker &bull; 7 Subjects &bull; {{ valid_topic_ids|length }} Syllabus Topics</p>
   </footer>
 
+  <script id="valid-topic-ids" type="application/json">{{ valid_topic_ids|tojson }}</script>
   <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>

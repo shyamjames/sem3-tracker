@@ -61,6 +61,12 @@ def create_app(db_path: Optional[str] = None, test_config: Optional[Dict[str, An
     # Initialize SQLite database and seed initial topics if empty
     storage.init_db(app.config["DATABASE"])
 
+    @app.context_processor
+    def inject_valid_topics():
+        db = app.config["DATABASE"]
+        all_topics = storage.get_all_topics(db)
+        return {"valid_topic_ids": [t["topic_id"] for t in all_topics]}
+
     @app.route("/api")
     @app.route("/api/index")
     @app.route("/")
