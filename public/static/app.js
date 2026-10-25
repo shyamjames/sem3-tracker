@@ -75,6 +75,35 @@ purgeObsoleteTopics();
 // Active Firestore unsubscribe callback
 let unsubscribeFirestore = null;
 
+// Determine if an exam has already concluded based on date and time
+function isExamDatePassed(examDateStr, examTimeStr) {
+  if (!examDateStr) return false;
+  const now = new Date();
+
+  // If time range is present (e.g. "9:30 AM - 12:30 PM"), check against the end time
+  if (examTimeStr && examTimeStr.includes("-")) {
+    const parts = examTimeStr.split("-");
+    const endStr = parts[1].trim();
+    const match = endStr.match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)$/i);
+    if (match) {
+      let hours = parseInt(match[1], 10);
+      const minutes = match[2] ? parseInt(match[2], 10) : 0;
+      const meridiem = match[3].toUpperCase();
+      if (meridiem === "PM" && hours < 12) hours += 12;
+      if (meridiem === "AM" && hours === 12) hours = 0;
+
+      const [y, m, d] = examDateStr.split("-").map((n) => parseInt(n, 10));
+      const examEndDate = new Date(y, m - 1, d, hours, minutes, 0, 0);
+      return now >= examEndDate;
+    }
+  }
+
+  // Fallback: compare calendar date against end of day (23:59:59)
+  const [y, m, d] = examDateStr.split("-").map((n) => parseInt(n, 10));
+  const dayEndDate = new Date(y, m - 1, d, 23, 59, 59, 999);
+  return now > dayEndDate;
+}
+
 // Function to update all DOM elements based on progressState
 function updateDOM() {
   const banner = document.getElementById("overall-banner");
@@ -88,6 +117,8 @@ function updateDOM() {
     subjectCards.forEach((card) => {
       const code = card.dataset.subjectCode;
       const total = parseInt(card.dataset.subjectTotal, 10) || 0;
+      const examDate = card.dataset.examDate || "";
+      const examTime = card.dataset.examTime || "";
 
       // Count topics for this subject that are true and exist in current syllabus
       let done = 0;
@@ -104,11 +135,65 @@ function updateDOM() {
       const countElem = document.getElementById(`card-count-${code}`);
       const pctElem = document.getElementById(`card-pct-${code}`);
       const barElem = document.getElementById(`card-bar-${code}`);
+      const statusElem = document.getElementById(`card-status-${code}`);
 
       if (countElem) countElem.textContent = `${done} / ${total} topics`;
       if (pctElem) pctElem.textContent = `${percent}%`;
       if (barElem) barElem.style.width = `${percent}%`;
+
+      const isPassed = isExamDatePassed(examDate, examTime);
+      const isCheckedOff = total > 0 && done >= total;
+      const isFinished = isPassed || isCheckedOff;
+
+      card.dataset.isFinished = isFinished ? "true" : "false";
+      card.classList.toggle("is-finished", isFinished);
+
+      if (statusElem) {
+        if (isPassed) {
+          statusElem.textContent = "Concluded";
+          statusElem.className = "card-status-tag status-concluded";
+          statusElem.style.display = "inline-flex";
+        } else if (isCheckedOff) {
+          statusElem.textContent = "Complete";
+          statusElem.className = "card-status-tag status-completed";
+          statusElem.style.display = "inline-flex";
+        } else {
+          statusElem.textContent = "";
+          statusElem.className = "card-status-tag";
+          statusElem.style.display = "none";
+        }
+      }
     });
+
+    // Reorder cards in container: active/unfinished first, finished last
+    const gridContainer = document.querySelector(".cards-asymmetric-grid");
+    if (gridContainer) {
+      const cardsArray = Array.from(subjectCards);
+      cardsArray.sort((a, b) => {
+        const aFin = a.dataset.isFinished === "true";
+        const bFin = b.dataset.isFinished === "true";
+
+        if (aFin !== bFin) {
+          return aFin ? 1 : -1;
+        }
+
+        const dateA = a.dataset.examDate || "";
+        const dateB = b.dataset.examDate || "";
+        return dateA.localeCompare(dateB);
+      });
+
+      let orderChanged = false;
+      for (let i = 0; i < cardsArray.length; i++) {
+        if (gridContainer.children[i] !== cardsArray[i]) {
+          orderChanged = true;
+          break;
+        }
+      }
+
+      if (orderChanged) {
+        cardsArray.forEach((c) => gridContainer.appendChild(c));
+      }
+    }
 
     overallDone = Math.min(overallDone, totalSyllabusTopics);
     const overallPct = totalSyllabusTopics > 0 ? Math.min(100, Math.round((overallDone / totalSyllabusTopics) * 100)) : 0;

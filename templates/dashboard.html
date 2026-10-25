@@ -50,15 +50,18 @@
       </svg>
       Syllabus by Exam Schedule
     </h2>
-    <span class="mono-tag">Chronological Order</span>
+    <span class="mono-tag">Active Exam Queue</span>
   </div>
 
   <div class="cards-asymmetric-grid">
     {% for subject in overall.subjects %}
-    <a href="{{ url_for('subject_page', code=subject.code) }}" class="subject-card" id="card-{{ subject.code }}" data-subject-code="{{ subject.code }}" data-subject-total="{{ subject.total }}">
+    <a href="{{ url_for('subject_page', code=subject.code) }}" class="subject-card" id="card-{{ subject.code }}" data-subject-code="{{ subject.code }}" data-subject-total="{{ subject.total }}" data-exam-date="{{ subject.exam_date }}" data-exam-time="{{ subject.exam_time }}">
       <div>
         <div class="card-top-meta">
-          <span class="code-pill">{{ subject.code }}</span>
+          <div class="card-top-left">
+            <span class="code-pill">{{ subject.code }}</span>
+            <span class="card-status-tag" id="card-status-{{ subject.code }}" style="display: none;"></span>
+          </div>
           <span class="exam-timeline-badge">
             <svg class="svg-icon" viewBox="0 0 24 24">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
