@@ -441,6 +441,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Handle Module Collapsing
+  function updateToggleAllModulesBtn() {
+    const toggleText = document.getElementById("toggle-all-modules-text");
+    if (!toggleText) return;
+    const cards = document.querySelectorAll(".module-card");
+    const allCollapsed = Array.from(cards).every((c) => c.classList.contains("is-collapsed"));
+    toggleText.textContent = allCollapsed ? "Expand All" : "Collapse All";
+  }
+
+  const moduleHeaders = document.querySelectorAll(".module-header");
+  moduleHeaders.forEach((header) => {
+    header.addEventListener("click", (e) => {
+      // Ignore clicks on check-all checkbox or its label
+      if (e.target.closest(".check-all-module-wrap")) {
+        return;
+      }
+      const card = header.closest(".module-card");
+      if (!card) return;
+      const isCollapsed = card.classList.toggle("is-collapsed");
+      header.setAttribute("aria-expanded", !isCollapsed);
+      updateToggleAllModulesBtn();
+    });
+
+    header.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        if (e.target.closest(".check-all-module-wrap")) return;
+        e.preventDefault();
+        header.click();
+      }
+    });
+  });
+
+  const btnToggleAllModules = document.getElementById("btn-toggle-all-modules");
+  if (btnToggleAllModules) {
+    btnToggleAllModules.addEventListener("click", () => {
+      const cards = document.querySelectorAll(".module-card");
+      const anyExpanded = Array.from(cards).some((c) => !c.classList.contains("is-collapsed"));
+      cards.forEach((card) => {
+        card.classList.toggle("is-collapsed", anyExpanded);
+        const header = card.querySelector(".module-header");
+        if (header) {
+          header.setAttribute("aria-expanded", !anyExpanded);
+        }
+      });
+      updateToggleAllModulesBtn();
+    });
+  }
+
   // Auth UI elements
   const btnLoginGoogle = document.getElementById("btn-login-google");
   const btnLogout = document.getElementById("btn-logout");

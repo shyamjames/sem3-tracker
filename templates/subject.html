@@ -53,12 +53,28 @@
 
 <!-- Modules Sections -->
 <section class="modules-list" aria-label="Syllabus Modules">
+  <div class="modules-toolbar">
+    <span class="mono-tag">// SYLLABUS MODULES</span>
+    <button type="button" class="btn-toggle-all-modules" id="btn-toggle-all-modules" aria-label="Collapse or expand all modules">
+      <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14">
+        <polyline points="7 13 12 18 17 13"></polyline>
+        <polyline points="7 6 12 11 17 6"></polyline>
+      </svg>
+      <span id="toggle-all-modules-text">Collapse All</span>
+    </button>
+  </div>
+
   {% for m_no in range(1, 6) %}
     {% set mod = subject.modules[m_no] %}
     {% if mod and mod.topics %}
     <article class="module-card" id="module-section-{{ m_no }}" data-module-no="{{ m_no }}" data-module-total="{{ mod.total }}">
-      <header class="module-header">
+      <header class="module-header" role="button" aria-expanded="true" aria-controls="module-content-{{ m_no }}" tabindex="0">
         <div class="module-title-wrap">
+          <button type="button" class="module-collapse-btn" aria-label="Collapse or expand Module {{ m_no }}" tabindex="-1">
+            <svg class="svg-icon chevron-icon" viewBox="0 0 24 24" width="16" height="16">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
           <label class="check-all-module-wrap" title="Toggle all topics in Module {{ m_no }}">
             <input
               type="checkbox"
@@ -82,7 +98,8 @@
       </div>
 
       <!-- Nested Sections Container -->
-      <div class="module-sections-wrap">
+      <div class="module-body-collapsible" id="module-content-{{ m_no }}">
+        <div class="module-sections-wrap">
         {% for section in mod.sections %}
         <div class="section-group" id="section-group-{{ subject.code }}-{{ m_no }}-{{ section.ref }}" data-section-ref="{{ section.ref }}" data-module-no="{{ m_no }}">
           <!-- Section Header (Outer container with check-all) -->
@@ -132,6 +149,7 @@
           </ul>
         </div>
         {% endfor %}
+      </div>
       </div>
     </article>
     {% endif %}
